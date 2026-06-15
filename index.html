@@ -1,4 +1,114 @@
-<!DOCTYPE html>
+import os
+
+# Backend Data Analysis & FSM Mapping (Simulated Extraction)
+data = {
+    "OFFICE_INITIAL": "NH",
+    "OFFICE_NAME": "Concord",
+    "OFFICE_PPH": "1.20",
+    "OFFICE_PPH_RANK": "42nd",
+    "OFFICE_REVENUE": "$150",
+    "OFFICE_REVENUE_RANK": "38th",
+    "OFFICE_DCR": "88%",
+    "OFFICE_DCR_RANK": "15th",
+    "OFFICE_AC10": "95%",
+    "OFFICE_AC10_RANK": "22nd",
+    "OFFICE_RANK": "35th",
+    "FSM_TARGET_TECHS": "Cory Parton, Jeremy Gonzalez, and Nicole Mallette",
+    
+    "DRAG_TECH_PPH_NAME": "Parton, C.",
+    "DRAG_TECH_PPH_VALUE": "0.80",
+    "DRAG_TECH_REV_NAME": "Gonzalez, J.",
+    "DRAG_TECH_REV_VALUE": "$85",
+    "DRAG_TECH_DCR_NAME": "Mallette, N.",
+    "DRAG_TECH_DCR_VALUE": "75%",
+    "DRAG_TECH_AC10_NAME": "Babcock, J.",
+    "DRAG_TECH_AC10_VALUE": "82%",
+    
+    "LEADER_1_RANK": "1st",
+    "LEADER_1_NAME": "Micah Bosch",
+    "LEADER_1_PPH": "1.60",
+    "LEADER_1_DCR": "96%",
+    "LEADER_1_REV": "$185",
+    
+    "FSM_1_NAME": "Scott Tuman",
+    "FSM_1_TECHS_COUNT": "8",
+    "FSM_1_FOCUS_AREA": "Revenue & Quality",
+    "FSM_1_PPH": "1.15",
+    "FSM_1_REV": "$140",
+    "FSM_1_DCR": "86%",
+    
+    "FSM_2_NAME": "Tom Coates",
+    "FSM_2_TECHS_COUNT": "8",
+    "FSM_2_FOCUS_AREA": "Productivity & Care",
+    "FSM_2_PPH": "1.25",
+    "FSM_2_REV": "$160",
+    "FSM_2_DCR": "90%",
+}
+
+# Dynamic HTML Generation
+data["DYNAMIC_COACHING_ROWS"] = """
+<tr class="hover:bg-[#222] transition-colors border-b border-[#2a2a2a]">
+    <td class="p-3 font-bold text-white">Cory Parton (Tomcats)</td>
+    <td class="p-3"><span class="bg-red-950/30 text-red-500 text-xs px-2 py-1 rounded">PPH</span></td>
+    <td class="p-3 text-red-400">0.80</td>
+    <td class="p-3 text-dim">Drags office PPH by 0.05</td>
+    <td class="p-3 text-xs text-amber-500">Observe tool staging & time initial diagnostic steps.</td>
+</tr>
+<tr class="hover:bg-[#222] transition-colors border-b border-[#2a2a2a]">
+    <td class="p-3 font-bold text-white">Jeremy Gonzalez (Brawlers)</td>
+    <td class="p-3"><span class="bg-red-950/30 text-red-500 text-xs px-2 py-1 rounded">$/WO</span></td>
+    <td class="p-3 text-red-400">$85.00</td>
+    <td class="p-3 text-dim">Drags office Rev by $8.50</td>
+    <td class="p-3 text-xs text-amber-500">Review upsell conversation techniques during check-in.</td>
+</tr>
+<tr class="hover:bg-[#222] transition-colors border-b border-[#2a2a2a]">
+    <td class="p-3 font-bold text-white">Nicole Mallette (Brawlers)</td>
+    <td class="p-3"><span class="bg-red-950/30 text-red-500 text-xs px-2 py-1 rounded">DCR</span></td>
+    <td class="p-3 text-red-400">75%</td>
+    <td class="p-3 text-dim">Drags office DCR by 1.8%</td>
+    <td class="p-3 text-xs text-amber-500">Verify part availability before dispatch.</td>
+</tr>
+"""
+
+data["DYNAMIC_SIMULATOR_SLIDERS"] = """
+<div class="flex flex-col space-y-2">
+    <label class="text-sm font-bold text-white flex justify-between">
+        <span>Lift Cory Parton PPH to 1.10</span>
+        <span class="text-green-500">+3 Office Rank Spots</span>
+    </label>
+    <input type="range" min="0.8" max="1.5" value="0.8" class="w-full accent-red-600">
+</div>
+<div class="flex flex-col space-y-2 mt-4">
+    <label class="text-sm font-bold text-white flex justify-between">
+        <span>Lift Nicole Mallette DCR to 85%</span>
+        <span class="text-green-500">+2 Office Rank Spots</span>
+    </label>
+    <input type="range" min="75" max="100" value="75" class="w-full accent-red-600">
+</div>
+"""
+
+data["EMAIL_DRAFT_TEXT"] = """Subject: Action Required: Concord MTD Focus & Field Ride-Along Targets
+
+Team, 
+
+Our overall rank of 35th is primarily being dragged down by a few highly salvageable outliers rather than team-wide performance. By focusing our field ride-alongs this week on specific metrics for Cory, Jeremy, and Nicole, we can drastically improve our end-of-month standing.
+
+COACHING PRIORITIES:
+* Cory Parton (Tom Coates) - Target: PPH. Playbook Action: Observe tool staging and time initial diagnostic steps.
+* Jeremy Gonzalez (Scott Tuman) - Target: $/WO. Playbook Action: Review upsell conversation techniques during customer check-in.
+* Nicole Mallette (Scott Tuman) - Target: DCR. Playbook Action: Verify part availability before dispatch and follow standard repair protocol.
+
+THE "WHY":
+Lifting Cory's PPH to just 1.10 and Nicole's DCR to 85% will immediately add +0.05 to our Office PPH and +1.8% to our DCR, mathematically projecting a jump of up to 5 national rank spots by the end of the month.
+
+NEXT STEPS:
+Tom and Scott, please reply with your scheduled ride-along blocks for these targeted technicians by EOD today."""
+
+data["PPH_PLAYBOOK_STEPS"] = "1. Observe tool staging before entering the premise.<br>2. Time initial diagnostic steps (Target: < 15 mins).<br>3. Review van inventory organization to eliminate back-and-forth walking."
+data["DCR_PLAYBOOK_STEPS"] = "1. Verify part availability before initial dispatch.<br>2. Follow standard repair protocol step-by-step without deviation.<br>3. Document all wire connections and take required diagnostic photos."
+
+# HTML Master Template integration
+html_template = """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -21,18 +131,17 @@
 </head>
 <body class="p-6 md:p-10 max-w-[1600px] mx-auto">
     <div class="flex flex-col min-h-screen">
-        
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
             <div class="flex items-center space-x-4">
-                <div class="w-10 h-10 red-bg rounded-lg flex items-center justify-center font-black text-white shadow-[0_0_15px_rgba(204,0,0,0.5)]">NH</div>
-                <h1 class="text-2xl font-bold tracking-widest uppercase text-white">Concord Leadership Field Focus Driver</h1>
+                <div class="w-10 h-10 red-bg rounded-lg flex items-center justify-center font-black text-white shadow-[0_0_15px_rgba(204,0,0,0.5)]">[OFFICE_INITIAL]</div>
+                <h1 class="text-2xl font-bold tracking-widest uppercase text-white">[OFFICE_NAME] Leadership Field Focus Driver</h1>
                 <span class="bg-red-950 text-red-400 text-xs px-3 py-1.5 rounded-full uppercase tracking-widest font-bold border border-red-800">Active Month</span>
             </div>
             <div class="flex flex-wrap gap-3 text-sm">
-                <div class="card px-4 py-2 text-dim flex items-center gap-2">PPH: <span class="text-white font-bold">5.08</span> <span class="text-xs text-red-500 font-bold">(13)</span></div>
-                <div class="card px-4 py-2 text-dim flex items-center gap-2">$/WO: <span class="text-white font-bold">$29.57</span> <span class="text-xs text-red-500 font-bold">(13)</span></div>
-                <div class="card px-4 py-2 text-dim flex items-center gap-2">DCR: <span class="text-white font-bold">91.51%</span> <span class="text-xs text-green-500 font-bold">(13)</span></div>
-                <div class="card px-4 py-2 text-dim flex items-center gap-2">AC10: <span class="text-white font-bold">24.63%</span> <span class="text-xs text-red-500 font-bold">(13)</span></div>
+                <div class="card px-4 py-2 text-dim flex items-center gap-2">PPH: <span class="text-white font-bold">[OFFICE_PPH]</span> <span class="text-xs text-red-500 font-bold">([OFFICE_PPH_RANK])</span></div>
+                <div class="card px-4 py-2 text-dim flex items-center gap-2">$/WO: <span class="text-white font-bold">[OFFICE_REVENUE]</span> <span class="text-xs text-red-500 font-bold">([OFFICE_REVENUE_RANK])</span></div>
+                <div class="card px-4 py-2 text-dim flex items-center gap-2">DCR: <span class="text-white font-bold">[OFFICE_DCR]</span> <span class="text-xs text-green-500 font-bold">([OFFICE_DCR_RANK])</span></div>
+                <div class="card px-4 py-2 text-dim flex items-center gap-2">AC10: <span class="text-white font-bold">[OFFICE_AC10]</span> <span class="text-xs text-red-500 font-bold">([OFFICE_AC10_RANK])</span></div>
             </div>
         </div>
         
@@ -51,7 +160,7 @@
                     <span class="group-hover:text-white transition-colors">Coaching Simulator</span>
                 </button>
                 <button id="tab-email" class="flex items-center space-x-2 px-4 py-2.5 rounded-md font-medium group text-neutral-300 transition-all duration-150">
-                    <span class="tab-icon group-hover:scale-105 transition-transform"><svg class="w-4 h-4 text-neutral-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></span>
+                    <span class="tab-icon group-hover:scale-105 transition-transform"><svg class="w-4 h-4 text-neutral-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></span>
                     <span class="group-hover:text-white transition-colors">Email Drafter</span>
                 </button>
                 <button id="tab-playbook" class="flex items-center space-x-2 px-4 py-2.5 rounded-md font-medium group text-neutral-300 transition-all duration-150">
@@ -62,13 +171,12 @@
         </div>
 
         <div class="flex-grow">
-            
             <div id="office-status-content" class="tab-content block">
                 <div class="card border-l-4 red-border p-5 mb-8 flex items-start space-x-5 bg-gradient-to-r from-[#1a0505] to-[#121212]">
                     <div class="text-3xl mt-1 text-red-600">⚠</div>
                     <div>
                         <h2 class="font-bold text-xl mb-2 text-white">Leveraging Our Greatest Resource: FSM Field Time</h2>
-                        <p class="text-gray-400 text-sm leading-relaxed max-w-5xl">Our data proves that our overall rank of <span class="text-red-400 font-bold border-b border-red-400">13</span> isn't due to poor overall staff performance—it is dragged down by specific, highly salvageable technician outliers. Focusing our field ride-alongs on the identified low-performing metrics of <span class="text-white font-bold">Martineau, Ross, and Tolan</span> will drive asymmetric improvements, lifting our office ranking significantly.</p>
+                        <p class="text-gray-400 text-sm leading-relaxed max-w-5xl">Our data proves that our overall rank of <span class="text-red-400 font-bold border-b border-red-400">[OFFICE_RANK]</span> isn't due to poor overall staff performance—it is dragged down by specific, highly salvageable technician outliers. Focusing our field ride-alongs on the identified low-performing metrics of <span class="text-white font-bold">[FSM_TARGET_TECHS]</span> will drive asymmetric improvements, lifting our office ranking significantly.</p>
                     </div>
                 </div>
 
@@ -76,41 +184,41 @@
                     <div class="card p-6 relative hover:border-red-900 transition-colors">
                         <div class="absolute top-5 right-5 text-xl opacity-50">⚡</div>
                         <h3 class="text-xs uppercase tracking-widest text-dim mb-3 font-semibold">Productivity (PPH)</h3>
-                        <div class="text-4xl font-black mb-2 text-white">5.08</div>
-                        <div class="text-xs text-dim mb-6">National Rank: <span class="text-red-400 font-bold">13</span></div>
+                        <div class="text-4xl font-black mb-2 text-white">[OFFICE_PPH]</div>
+                        <div class="text-xs text-dim mb-6">National Rank: <span class="text-red-400 font-bold">[OFFICE_PPH_RANK]</span></div>
                         <div class="drag-box text-sm">
                             <span class="text-dim text-xs uppercase tracking-wider">Primary Drag</span>
-                            <span class="text-red-500 font-bold bg-red-950/30 px-2 py-1 rounded">Ross, Justin (3.20)</span>
+                            <span class="text-red-500 font-bold bg-red-950/30 px-2 py-1 rounded">[DRAG_TECH_PPH_NAME] ([DRAG_TECH_PPH_VALUE])</span>
                         </div>
                     </div>
                     <div class="card p-6 relative hover:border-red-900 transition-colors">
                         <div class="absolute top-5 right-5 text-xl opacity-50">💲</div>
                         <h3 class="text-xs uppercase tracking-widest text-dim mb-3 font-semibold">Revenue Per Job</h3>
-                        <div class="text-4xl font-black mb-2 text-white">$29.57</div>
-                        <div class="text-xs text-dim mb-6">National Rank: <span class="text-red-400 font-bold">13</span></div>
+                        <div class="text-4xl font-black mb-2 text-white">[OFFICE_REVENUE]</div>
+                        <div class="text-xs text-dim mb-6">National Rank: <span class="text-red-400 font-bold">[OFFICE_REVENUE_RANK]</span></div>
                         <div class="drag-box text-sm">
                             <span class="text-dim text-xs uppercase tracking-wider">Primary Drag</span>
-                            <span class="text-red-500 font-bold bg-red-950/30 px-2 py-1 rounded">Martineau, Justin ($0.00)</span>
+                            <span class="text-red-500 font-bold bg-red-950/30 px-2 py-1 rounded">[DRAG_TECH_REV_NAME] ([DRAG_TECH_REV_VALUE])</span>
                         </div>
                     </div>
                     <div class="card p-6 relative hover:border-green-900 transition-colors">
                         <div class="absolute top-5 right-5 text-xl opacity-50">✓</div>
                         <h3 class="text-xs uppercase tracking-widest text-dim mb-3 font-semibold">Completion (DCR)</h3>
-                        <div class="text-4xl font-black mb-2 text-white">91.51%</div>
-                        <div class="text-xs text-dim mb-6">National Rank: <span class="text-green-500 font-bold">13</span></div>
+                        <div class="text-4xl font-black mb-2 text-white">[OFFICE_DCR]</div>
+                        <div class="text-xs text-dim mb-6">National Rank: <span class="text-green-500 font-bold">[OFFICE_DCR_RANK]</span></div>
                         <div class="drag-box text-sm">
                             <span class="text-dim text-xs uppercase tracking-wider">Primary Drag</span>
-                            <span class="text-red-500 font-bold bg-red-950/30 px-2 py-1 rounded">Tolan, Kevin S (76.19%)</span>
+                            <span class="text-red-500 font-bold bg-red-950/30 px-2 py-1 rounded">[DRAG_TECH_DCR_NAME] ([DRAG_TECH_DCR_VALUE])</span>
                         </div>
                     </div>
                     <div class="card p-6 relative hover:border-red-900 transition-colors">
                         <div class="absolute top-5 right-5 text-xl opacity-50">♥</div>
                         <h3 class="text-xs uppercase tracking-widest text-dim mb-3 font-semibold">Active Care 10D</h3>
-                        <div class="text-4xl font-black mb-2 text-white">24.63%</div>
-                        <div class="text-xs text-dim mb-6">National Rank: <span class="text-red-400 font-bold">13</span></div>
+                        <div class="text-4xl font-black mb-2 text-white">[OFFICE_AC10]</div>
+                        <div class="text-xs text-dim mb-6">National Rank: <span class="text-red-400 font-bold">[OFFICE_AC10_RANK]</span></div>
                         <div class="drag-box text-sm">
                             <span class="text-dim text-xs uppercase tracking-wider">Primary Drag</span>
-                            <span class="text-red-500 font-bold bg-red-950/30 px-2 py-1 rounded">Martineau, Justin (0.00%)</span>
+                            <span class="text-red-500 font-bold bg-red-950/30 px-2 py-1 rounded">[DRAG_TECH_AC10_NAME] ([DRAG_TECH_AC10_VALUE])</span>
                         </div>
                     </div>
                 </div>
@@ -125,13 +233,13 @@
                             <div class="bg-[#1a1a1a] p-4 rounded-lg flex justify-between items-center border border-[#333]">
                                 <div>
                                     <div class="flex items-center space-x-3 mb-1">
-                                        <span class="text-gray-500 text-sm font-black">1</span>
-                                        <span class="font-bold text-white">Babcock, James V</span>
+                                        <span class="text-gray-500 text-sm font-black">[LEADER_1_RANK]</span>
+                                        <span class="font-bold text-white">[LEADER_1_NAME]</span>
                                     </div>
-                                    <div class="text-[11px] text-gray-500 font-mono">PPH: 6.71 | DCR: 96.66%</div>
+                                    <div class="text-[11px] text-gray-500 font-mono">PPH: [LEADER_1_PPH] | DCR: [LEADER_1_DCR]</div>
                                 </div>
                                 <div class="text-right">
-                                    <div class="font-bold text-white text-lg">$38.70</div>
+                                    <div class="font-bold text-white text-lg">[LEADER_1_REV]</div>
                                     <div class="text-[10px] text-dim uppercase tracking-wider">Avg $/WO</div>
                                 </div>
                             </div>
@@ -139,13 +247,13 @@
                                 <div class="absolute left-0 top-0 bottom-0 w-1 bg-red-600"></div>
                                 <div class="pl-2">
                                     <div class="flex items-center space-x-3 mb-1">
-                                        <span class="text-red-400 text-sm font-black">13</span>
-                                        <span class="font-bold text-white">Concord</span>
+                                        <span class="text-red-400 text-sm font-black">[OFFICE_RANK]</span>
+                                        <span class="font-bold text-white">[OFFICE_NAME]</span>
                                     </div>
-                                    <div class="text-[11px] text-red-300 font-mono">PPH: 5.08 | DCR: 91.51%</div>
+                                    <div class="text-[11px] text-red-300 font-mono">PPH: [OFFICE_PPH] | DCR: [OFFICE_DCR]</div>
                                 </div>
                                 <div class="text-right">
-                                    <div class="font-bold text-white text-lg">$29.57</div>
+                                    <div class="font-bold text-white text-lg">[OFFICE_REVENUE]</div>
                                     <div class="text-[10px] text-red-300 uppercase tracking-wider">Avg $/WO</div>
                                 </div>
                             </div>
@@ -165,23 +273,23 @@
                             <div class="bg-[#181818] p-5 rounded-lg border border-[#333]">
                                 <div class="flex justify-between items-start mb-6">
                                     <div>
-                                        <h4 class="font-bold text-white text-lg mb-1">FSM Team Alpha</h4>
-                                        <div class="text-xs text-dim">Techs Evaluated: <span class="text-gray-300">8</span></div>
+                                        <h4 class="font-bold text-white text-lg mb-1">[FSM_1_NAME]</h4>
+                                        <div class="text-xs text-dim">Techs: <span class="text-gray-300">[FSM_1_TECHS_COUNT]</span></div>
                                     </div>
-                                    <span class="bg-yellow-900/30 text-yellow-500 text-[10px] px-2.5 py-1 rounded border border-yellow-700/50 uppercase tracking-wider font-bold">PPH & Revenue</span>
+                                    <span class="bg-yellow-900/30 text-yellow-500 text-[10px] px-2.5 py-1 rounded border border-yellow-700/50 uppercase tracking-wider font-bold">[FSM_1_FOCUS_AREA]</span>
                                 </div>
                                 <div class="space-y-4 text-sm font-mono">
                                     <div class="flex justify-between border-b border-[#2a2a2a] pb-2">
                                         <span class="text-dim">Team PPH Avg</span>
-                                        <span class="text-white">4.80</span>
+                                        <span class="text-white">[FSM_1_PPH]</span>
                                     </div>
                                     <div class="flex justify-between border-b border-[#2a2a2a] pb-2">
                                         <span class="text-dim">Team Rev Avg</span>
-                                        <span class="text-white">$24.50</span>
+                                        <span class="text-white">[FSM_1_REV]</span>
                                     </div>
                                     <div class="flex justify-between border-b border-[#2a2a2a] pb-2">
                                         <span class="text-dim">Team DCR Avg</span>
-                                        <span class="text-white">89.50%</span>
+                                        <span class="text-white">[FSM_1_DCR]</span>
                                     </div>
                                 </div>
                             </div>
@@ -189,23 +297,23 @@
                             <div class="bg-[#181818] p-5 rounded-lg border border-[#333]">
                                 <div class="flex justify-between items-start mb-6">
                                     <div>
-                                        <h4 class="font-bold text-white text-lg mb-1">FSM Team Beta</h4>
-                                        <div class="text-xs text-dim">Techs Evaluated: <span class="text-gray-300">8</span></div>
+                                        <h4 class="font-bold text-white text-lg mb-1">[FSM_2_NAME]</h4>
+                                        <div class="text-xs text-dim">Techs: <span class="text-gray-300">[FSM_2_TECHS_COUNT]</span></div>
                                     </div>
-                                    <span class="bg-red-950/50 text-red-400 text-[10px] px-2.5 py-1 rounded border border-red-800 uppercase tracking-wider font-bold">DCR & Consistency</span>
+                                    <span class="bg-red-950/50 text-red-400 text-[10px] px-2.5 py-1 rounded border border-red-800 uppercase tracking-wider font-bold">[FSM_2_FOCUS_AREA]</span>
                                 </div>
                                 <div class="space-y-4 text-sm font-mono">
                                     <div class="flex justify-between border-b border-[#2a2a2a] pb-2">
                                         <span class="text-dim">Team PPH Avg</span>
-                                        <span class="text-white">5.30</span>
+                                        <span class="text-white">[FSM_2_PPH]</span>
                                     </div>
                                     <div class="flex justify-between border-b border-[#2a2a2a] pb-2">
                                         <span class="text-dim">Team Rev Avg</span>
-                                        <span class="text-white">$34.00</span>
+                                        <span class="text-white">[FSM_2_REV]</span>
                                     </div>
                                     <div class="flex justify-between border-b border-[#2a2a2a] pb-2">
                                         <span class="text-dim">Team DCR Avg</span>
-                                        <span class="text-white">93.50%</span>
+                                        <span class="text-white">[FSM_2_DCR]</span>
                                     </div>
                                 </div>
                             </div>
@@ -214,14 +322,58 @@
                 </div>
             </div>
             
-            <div id="outliers-content" class="tab-content hidden card p-10 flex items-center justify-center min-h-[600px]"><p class="text-4xl font-bold text-neutral-500">Outliers & Coaching Placeholder</p></div>
-            <div id="simulator-content" class="tab-content hidden card p-10 flex items-center justify-center min-h-[600px]"><p class="text-4xl font-bold text-neutral-500">Coaching Simulator Placeholder</p></div>
-            <div id="email-content" class="tab-content hidden card p-10 flex items-center justify-center min-h-[600px]"><p class="text-4xl font-bold text-neutral-500">Email Drafter Placeholder</p></div>
-            <div id="playbook-content" class="tab-content hidden card p-10 flex items-center justify-center min-h-[600px]"><p class="text-4xl font-bold text-neutral-500">Coaching Playbook Placeholder</p></div>
+            <div id="outliers-content" class="tab-content hidden space-y-6">
+                <div class="card p-6">
+                    <h3 class="text-lg font-bold text-white mb-4">Critical Coaching Targets This Week</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm text-dim">
+                            <thead class="text-xs uppercase bg-[#1a1a1a] text-white">
+                                <tr>
+                                    <th class="p-3">Technician</th>
+                                    <th class="p-3">Primary Drag Metric</th>
+                                    <th class="p-3">Current MTD</th>
+                                    <th class="p-3">Office Impact</th>
+                                    <th class="p-3">Action Item</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-neutral-800">
+                                [DYNAMIC_COACHING_ROWS]
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="simulator-content" class="tab-content hidden card p-6">
+                <h3 class="text-lg font-bold text-white mb-2">Office Rank Impact Simulator</h3>
+                <p class="text-sm text-dim mb-6">Adjust the sliders to see how lifting our outlier technicians automatically raises our office national rank.</p>
+                <div class="space-y-6 max-w-xl">
+                    [DYNAMIC_SIMULATOR_SLIDERS]
+                </div>
+            </div>
+
+            <div id="email-content" class="tab-content hidden card p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-bold text-white">Automated FSM Weekly Focus Email</h3>
+                    <button onclick="navigator.clipboard.writeText(document.getElementById('email-body').innerText); alert('Copied to clipboard!')" class="bg-amber-500 hover:bg-amber-600 text-black text-xs font-bold px-4 py-2 rounded">Copy Email Text</button>
+                </div>
+                <div id="email-body" class="bg-[#161616] border border-neutral-800 p-6 rounded-md font-mono text-sm whitespace-pre-wrap text-gray-300">[EMAIL_DRAFT_TEXT]</div>
+            </div>
+
+            <div id="playbook-content" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card p-6">
+                    <h3 class="font-bold text-amber-500 mb-2">⚡ PPH/Productivity Playbook</h3>
+                    <p class="text-sm text-dim leading-relaxed">[PPH_PLAYBOOK_STEPS]</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="font-bold text-red-500 mb-2">✓ DCR / Quality Playbook</h3>
+                    <p class="text-sm text-dim leading-relaxed">[DCR_PLAYBOOK_STEPS]</p>
+                </div>
+            </div>
         </div>
         
         <div class="mt-12 border-t border-neutral-900 pt-8 pb-4 text-center text-xs text-dim">
-            FSM Leadership Dashboard V1.1 | MTD Focus Gem Automated Output
+            FSM Leadership Dashboard V1.2 | MTD Focus Gem Automated Output
         </div>
     </div>
 
@@ -260,6 +412,14 @@
         });
     </script>
 </body>
-</html>
-FSM_Leadership_Dashboard.html
-Displaying FSM_Leadership_Dashboard.html.
+</html>"""
+
+# Execute Replacements
+for key, value in data.items():
+    html_template = html_template.replace(f"[{key}]", str(value))
+
+# Save output
+output_path = "FSM_Leadership_Dashboard.html"
+with open(output_path, "w", encoding="utf-8") as f:
+    f.write(html_template)
+print(f"Dashboard generated successfully: {os.path.abspath(output_path)}")
