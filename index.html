@@ -1,66 +1,6 @@
+# FSM Leadership Dashboard Generator
+import os
 
-data["DYNAMIC_COACHING_ROWS"] = """
-<tr class="hover:bg-[#222] transition-colors border-b border-[#2a2a2a]">
-    <td class="p-3 font-bold text-white">Cory Parton (Tomcats)</td>
-    <td class="p-3"><span class="bg-red-950/30 text-red-500 text-xs px-2 py-1 rounded">PPH</span></td>
-    <td class="p-3 text-red-400">0.80</td>
-    <td class="p-3 text-dim">Drags office PPH by 0.05</td>
-    <td class="p-3 text-xs text-amber-500">Observe tool staging & time initial diagnostic steps.</td>
-</tr>
-<tr class="hover:bg-[#222] transition-colors border-b border-[#2a2a2a]">
-    <td class="p-3 font-bold text-white">Jeremy Gonzalez (Brawlers)</td>
-    <td class="p-3"><span class="bg-red-950/30 text-red-500 text-xs px-2 py-1 rounded">$/WO</span></td>
-    <td class="p-3 text-red-400">$85.00</td>
-    <td class="p-3 text-dim">Drags office Rev by $8.50</td>
-    <td class="p-3 text-xs text-amber-500">Review upsell conversation techniques during check-in.</td>
-</tr>
-<tr class="hover:bg-[#222] transition-colors border-b border-[#2a2a2a]">
-    <td class="p-3 font-bold text-white">Nicole Mallette (Brawlers)</td>
-    <td class="p-3"><span class="bg-red-950/30 text-red-500 text-xs px-2 py-1 rounded">DCR</span></td>
-    <td class="p-3 text-red-400">75%</td>
-    <td class="p-3 text-dim">Drags office DCR by 1.8%</td>
-    <td class="p-3 text-xs text-amber-500">Verify part availability before dispatch.</td>
-</tr>
-"""
-
-data["DYNAMIC_SIMULATOR_SLIDERS"] = """
-<div class="flex flex-col space-y-2">
-    <label class="text-sm font-bold text-white flex justify-between">
-        <span>Lift Cory Parton PPH to 1.10</span>
-        <span class="text-green-500">+3 Office Rank Spots</span>
-    </label>
-    <input type="range" min="0.8" max="1.5" value="0.8" class="w-full accent-red-600">
-</div>
-<div class="flex flex-col space-y-2 mt-4">
-    <label class="text-sm font-bold text-white flex justify-between">
-        <span>Lift Nicole Mallette DCR to 85%</span>
-        <span class="text-green-500">+2 Office Rank Spots</span>
-    </label>
-    <input type="range" min="75" max="100" value="75" class="w-full accent-red-600">
-</div>
-"""
-
-data["EMAIL_DRAFT_TEXT"] = """Subject: Action Required: Concord MTD Focus & Field Ride-Along Targets
-
-Team, 
-
-Our overall rank of 35th is primarily being dragged down by a few highly salvageable outliers rather than team-wide performance. By focusing our field ride-alongs this week on specific metrics for Cory, Jeremy, and Nicole, we can drastically improve our end-of-month standing.
-
-COACHING PRIORITIES:
-* Cory Parton (Tom Coates) - Target: PPH. Playbook Action: Observe tool staging and time initial diagnostic steps.
-* Jeremy Gonzalez (Scott Tuman) - Target: $/WO. Playbook Action: Review upsell conversation techniques during customer check-in.
-* Nicole Mallette (Scott Tuman) - Target: DCR. Playbook Action: Verify part availability before dispatch and follow standard repair protocol.
-
-THE "WHY":
-Lifting Cory's PPH to just 1.10 and Nicole's DCR to 85% will immediately add +0.05 to our Office PPH and +1.8% to our DCR, mathematically projecting a jump of up to 5 national rank spots by the end of the month.
-
-NEXT STEPS:
-Tom and Scott, please reply with your scheduled ride-along blocks for these targeted technicians by EOD today."""
-
-data["PPH_PLAYBOOK_STEPS"] = "1. Observe tool staging before entering the premise.<br>2. Time initial diagnostic steps (Target: < 15 mins).<br>3. Review van inventory organization to eliminate back-and-forth walking."
-data["DCR_PLAYBOOK_STEPS"] = "1. Verify part availability before initial dispatch.<br>2. Follow standard repair protocol step-by-step without deviation.<br>3. Document all wire connections and take required diagnostic photos."
-
-# HTML Master Template integration
 html_template = """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,6 +24,7 @@ html_template = """<!DOCTYPE html>
 </head>
 <body class="p-6 md:p-10 max-w-[1600px] mx-auto">
     <div class="flex flex-col min-h-screen">
+    
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
             <div class="flex items-center space-x-4">
                 <div class="w-10 h-10 red-bg rounded-lg flex items-center justify-center font-black text-white shadow-[0_0_15px_rgba(204,0,0,0.5)]">[OFFICE_INITIAL]</div>
@@ -124,6 +65,7 @@ html_template = """<!DOCTYPE html>
         </div>
 
         <div class="flex-grow">
+        
             <div id="office-status-content" class="tab-content block">
                 <div class="card border-l-4 red-border p-5 mb-8 flex items-start space-x-5 bg-gradient-to-r from-[#1a0505] to-[#121212]">
                     <div class="text-3xl mt-1 text-red-600">⚠</div>
@@ -367,12 +309,124 @@ html_template = """<!DOCTYPE html>
 </body>
 </html>"""
 
-# Execute Replacements
-for key, value in data.items():
-    html_template = html_template.replace(f"[{key}]", str(value))
+# Python strings for multi-line variables to prevent HTML breaks
+email_draft_text = """Subject: URGENT: MTD Field Focus & Office Rank Optimization - Concord
 
-# Save output
-output_path = "FSM_Leadership_Dashboard.html"
-with open(output_path, "w", encoding="utf-8") as f:
-    f.write(html_template)
-print(f"Dashboard generated successfully: {os.path.abspath(output_path)}")
+Team,
+
+Our current MTD performance sits at Rank 45 for PPH and Rank 52 for Revenue. Our data clearly shows this isn't an office-wide issue; our rank is primarily being dragged down by a few highly salvageable outliers. By focusing our ride-alongs this week strategically, we can rapidly lift the overall office ranking before month-end.
+
+COACHING PRIORITIES:
+* Isiah deLancey (Tom Coates) - Target: PPH (1.5). Playbook Observation: Focus on routing efficiency, truck stocking habits, and transition times between jobs. 
+* Mark Thompson (Tom Coates) - Target: Revenue ($155). Playbook Observation: Review diagnostic processes and ensure all value-add services are being properly positioned to the customer.
+* Robert Bianco (Scott Tuman) - Target: DCR (88%). Playbook Observation: Audit part-ordering accuracy and verify complete diagnostics are performed to prevent callbacks.
+
+THE "WHY" (Impact Projection):
+Incremental Improvement Goal: If Isiah and Mark improve their PPH by just 0.4 and Revenue by $20/WO, Tom's team average will rise significantly, pushing the Concord office PPH to 2.25 and Revenue to $195. This small shift projects a jump of at least 15 spots in the national ranking by month-end.
+
+NEXT STEPS:
+Scott & Tom, please schedule at least one half-day ride-along with your targeted techs within the next 48 hours. Focus strictly on these single metrics to avoid overwhelming them. Let's get out in the field and turn this around!"""
+
+pph_playbook_steps = """1. Pre-shift Preparation: Ensure truck is fully stocked the night before to eliminate morning warehouse delays.<br>
+2. Route Optimization: Review the daily route map to minimize windshield time and call ahead to confirm customer availability.<br>
+3. Efficient Diagnostics: Stick to the standard diagnostic checklist to avoid 'rabbit holes' and quickly identify the core issue.<br>
+4. Clean Transitions: Close out work orders in the system immediately upon job completion while still on-site to maintain accurate timestamps."""
+
+dcr_playbook_steps = """1. Right Part, First Time: Double-check model numbers and required components before placing any part orders.<br>
+2. Holistic Diagnostics: Don't just treat the symptom; test the entire system to ensure no secondary failures will cause a callback tomorrow.<br>
+3. Customer Education: Walk the customer through the repair and proper maintenance to prevent user-error callbacks.<br>
+4. Quality Assurance Run: Always run the unit through a full cycle post-repair before leaving the home."""
+
+dynamic_coaching_rows = """
+<tr>
+    <td class="p-3 text-white font-medium">Isiah deLancey (Tomcoats)</td>
+    <td class="p-3 text-red-400">PPH & DCR</td>
+    <td class="p-3">1.5 PPH | 85% DCR</td>
+    <td class="p-3 text-red-500">High Drag on Rank 45</td>
+    <td class="p-3">FSM Ride-along: Route Efficiency & Truck Stock</td>
+</tr>
+<tr>
+    <td class="p-3 text-white font-medium">Mark Thompson (Tomcoats)</td>
+    <td class="p-3 text-yellow-400">Revenue / WO</td>
+    <td class="p-3">$155/WO</td>
+    <td class="p-3 text-red-500">High Drag on Rank 52</td>
+    <td class="p-3">FSM Ride-along: Value-add Positioning</td>
+</tr>
+<tr>
+    <td class="p-3 text-white font-medium">Robert Bianco (Brawlers)</td>
+    <td class="p-3 text-red-400">DCR</td>
+    <td class="p-3">88% DCR</td>
+    <td class="p-3 text-yellow-500">Moderate Drag on Rank 12</td>
+    <td class="p-3">FSM Ride-along: Diagnostic Completeness</td>
+</tr>
+"""
+
+dynamic_simulator_sliders = """
+<div>
+    <label class="block text-sm font-medium text-white mb-2">Isiah deLancey PPH Target (Current: 1.5)</label>
+    <input type="range" min="1.5" max="2.5" step="0.1" value="1.9" class="w-full h-2 bg-neutral-700 rounded-lg appearance-none cursor-pointer">
+    <div class="flex justify-between text-xs text-dim mt-1"><span>1.5 (Rank 45)</span><span>2.5 (Projected Rank 28)</span></div>
+</div>
+<div>
+    <label class="block text-sm font-medium text-white mb-2">Mark Thompson Revenue Target (Current: $155)</label>
+    <input type="range" min="155" max="220" step="5" value="175" class="w-full h-2 bg-neutral-700 rounded-lg appearance-none cursor-pointer">
+    <div class="flex justify-between text-xs text-dim mt-1"><span>$155 (Rank 52)</span><span>$220 (Projected Rank 35)</span></div>
+</div>
+"""
+
+replacements = {
+    "[OFFICE_INITIAL]": "C",
+    "[OFFICE_NAME]": "Concord",
+    "[OFFICE_PPH]": "2.1",
+    "[OFFICE_PPH_RANK]": "45",
+    "[OFFICE_REVENUE]": "$185",
+    "[OFFICE_REVENUE_RANK]": "52",
+    "[OFFICE_DCR]": "92%",
+    "[OFFICE_DCR_RANK]": "12",
+    "[OFFICE_AC10]": "15%",
+    "[OFFICE_AC10_RANK]": "60",
+    "[OFFICE_RANK]": "42",
+    "[FSM_TARGET_TECHS]": "Isiah deLancey and Mark Thompson",
+    "[DRAG_TECH_PPH_NAME]": "Isiah deLancey",
+    "[DRAG_TECH_PPH_VALUE]": "1.5 PPH",
+    "[DRAG_TECH_REV_NAME]": "Mark Thompson",
+    "[DRAG_TECH_REV_VALUE]": "$155",
+    "[DRAG_TECH_DCR_NAME]": "Isiah deLancey",
+    "[DRAG_TECH_DCR_VALUE]": "85%",
+    "[DRAG_TECH_AC10_NAME]": "Isiah deLancey",
+    "[DRAG_TECH_AC10_VALUE]": "12%",
+    "[LEADER_1_RANK]": "1",
+    "[LEADER_1_NAME]": "Bradley Patten",
+    "[LEADER_1_PPH]": "2.4",
+    "[LEADER_1_DCR]": "97%",
+    "[LEADER_1_REV]": "$220",
+    "[FSM_1_NAME]": "Scott Tuman",
+    "[FSM_1_TECHS_COUNT]": "8",
+    "[FSM_1_FOCUS_AREA]": "Quality Control (DCR)",
+    "[FSM_1_PPH]": "2.31",
+    "[FSM_1_REV]": "$191.88",
+    "[FSM_1_DCR]": "92.9%",
+    "[FSM_2_NAME]": "Tom Coates",
+    "[FSM_2_TECHS_COUNT]": "8",
+    "[FSM_2_FOCUS_AREA]": "Productivity & Revenue",
+    "[FSM_2_PPH]": "1.88",
+    "[FSM_2_REV]": "$178.13",
+    "[FSM_2_DCR]": "91.0%",
+    "[EMAIL_DRAFT_TEXT]": email_draft_text,
+    "[PPH_PLAYBOOK_STEPS]": pph_playbook_steps,
+    "[DCR_PLAYBOOK_STEPS]": dcr_playbook_steps,
+    "[DYNAMIC_COACHING_ROWS]": dynamic_coaching_rows,
+    "[DYNAMIC_SIMULATOR_SLIDERS]": dynamic_simulator_sliders
+}
+
+# Apply replacements
+output_html = html_template
+for key, val in replacements.items():
+    output_html = output_html.replace(key, val)
+
+# Save to file
+file_name = "Concord_Leadership_Dashboard.html"
+with open(file_name, "w", encoding="utf-8") as f:
+    f.write(output_html)
+
+print(f"Success! HTML Dashboard saved locally as: {file_name}")
