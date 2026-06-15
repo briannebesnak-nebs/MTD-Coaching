@@ -1,7 +1,4 @@
-# FSM Leadership Dashboard Generator
-import os
-
-html_template = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -27,15 +24,15 @@ html_template = """<!DOCTYPE html>
     
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
             <div class="flex items-center space-x-4">
-                <div class="w-10 h-10 red-bg rounded-lg flex items-center justify-center font-black text-white shadow-[0_0_15px_rgba(204,0,0,0.5)]">[OFFICE_INITIAL]</div>
-                <h1 class="text-2xl font-bold tracking-widest uppercase text-white">[OFFICE_NAME] Leadership Field Focus Driver</h1>
+                <div class="w-10 h-10 red-bg rounded-lg flex items-center justify-center font-black text-white shadow-[0_0_15px_rgba(204,0,0,0.5)]">BO</div>
+                <h1 class="text-2xl font-bold tracking-widest uppercase text-white">Boston North Leadership Field Focus Driver</h1>
                 <span class="bg-red-950 text-red-400 text-xs px-3 py-1.5 rounded-full uppercase tracking-widest font-bold border border-red-800">Active Month</span>
             </div>
             <div class="flex flex-wrap gap-3 text-sm">
-                <div class="card px-4 py-2 text-dim flex items-center gap-2">PPH: <span class="text-white font-bold">[OFFICE_PPH]</span> <span class="text-xs text-red-500 font-bold">([OFFICE_PPH_RANK])</span></div>
-                <div class="card px-4 py-2 text-dim flex items-center gap-2">$/WO: <span class="text-white font-bold">[OFFICE_REVENUE]</span> <span class="text-xs text-red-500 font-bold">([OFFICE_REVENUE_RANK])</span></div>
-                <div class="card px-4 py-2 text-dim flex items-center gap-2">DCR: <span class="text-white font-bold">[OFFICE_DCR]</span> <span class="text-xs text-green-500 font-bold">([OFFICE_DCR_RANK])</span></div>
-                <div class="card px-4 py-2 text-dim flex items-center gap-2">AC10: <span class="text-white font-bold">[OFFICE_AC10]</span> <span class="text-xs text-red-500 font-bold">([OFFICE_AC10_RANK])</span></div>
+                <div class="card px-4 py-2 text-dim flex items-center gap-2">PPH: <span class="text-white font-bold">1.66</span> <span class="text-xs text-red-500 font-bold">(Rank 43)</span></div>
+                <div class="card px-4 py-2 text-dim flex items-center gap-2">$/WO: <span class="text-white font-bold">$125.40</span> <span class="text-xs text-red-500 font-bold">(Rank 39)</span></div>
+                <div class="card px-4 py-2 text-dim flex items-center gap-2">DCR: <span class="text-white font-bold">81.4%</span> <span class="text-xs text-green-500 font-bold">(Rank 14)</span></div>
+                <div class="card px-4 py-2 text-dim flex items-center gap-2">AC10: <span class="text-white font-bold">8.4%</span> <span class="text-xs text-red-500 font-bold">(Rank 41)</span></div>
             </div>
         </div>
         
@@ -71,7 +68,7 @@ html_template = """<!DOCTYPE html>
                     <div class="text-3xl mt-1 text-red-600">⚠</div>
                     <div>
                         <h2 class="font-bold text-xl mb-2 text-white">Leveraging Our Greatest Resource: FSM Field Time</h2>
-                        <p class="text-gray-400 text-sm leading-relaxed max-w-5xl">Our data proves that our overall rank of <span class="text-red-400 font-bold border-b border-red-400">[OFFICE_RANK]</span> isn't due to poor overall staff performance—it is dragged down by specific, highly salvageable technician outliers. Focusing our field ride-alongs on the identified low-performing metrics of <span class="text-white font-bold">[FSM_TARGET_TECHS]</span> will drive asymmetric improvements, lifting our office ranking significantly.</p>
+                        <p class="text-gray-400 text-sm leading-relaxed max-w-5xl">Our data proves that our overall rank of <span class="text-red-400 font-bold border-b border-red-400">Rank 38</span> isn't due to poor overall staff performance—it is dragged down by specific, highly salvageable technician outliers. Focusing our field ride-alongs on the identified low-performing metrics of <span class="text-white font-bold">Nicole Mallette, Bryan Dorward, and Cody Yeaw</span> will drive asymmetric improvements, lifting our office ranking significantly.</p>
                     </div>
                 </div>
 
@@ -79,41 +76,41 @@ html_template = """<!DOCTYPE html>
                     <div class="card p-6 relative hover:border-red-900 transition-colors">
                         <div class="absolute top-5 right-5 text-xl opacity-50">⚡</div>
                         <h3 class="text-xs uppercase tracking-widest text-dim mb-3 font-semibold">Productivity (PPH)</h3>
-                        <div class="text-4xl font-black mb-2 text-white">[OFFICE_PPH]</div>
-                        <div class="text-xs text-dim mb-6">National Rank: <span class="text-red-400 font-bold">[OFFICE_PPH_RANK]</span></div>
+                        <div class="text-4xl font-black mb-2 text-white">1.66</div>
+                        <div class="text-xs text-dim mb-6">National Rank: <span class="text-red-400 font-bold">Rank 43</span></div>
                         <div class="drag-box text-sm">
                             <span class="text-dim text-xs uppercase tracking-wider">Primary Drag</span>
-                            <span class="text-red-500 font-bold bg-red-950/30 px-2 py-1 rounded">[DRAG_TECH_PPH_NAME] ([DRAG_TECH_PPH_VALUE])</span>
+                            <span class="text-red-500 font-bold bg-red-950/30 px-2 py-1 rounded">Nicole Mallette (1.21)</span>
                         </div>
                     </div>
                     <div class="card p-6 relative hover:border-red-900 transition-colors">
                         <div class="absolute top-5 right-5 text-xl opacity-50">💲</div>
                         <h3 class="text-xs uppercase tracking-widest text-dim mb-3 font-semibold">Revenue Per Job</h3>
-                        <div class="text-4xl font-black mb-2 text-white">[OFFICE_REVENUE]</div>
-                        <div class="text-xs text-dim mb-6">National Rank: <span class="text-red-400 font-bold">[OFFICE_REVENUE_RANK]</span></div>
+                        <div class="text-4xl font-black mb-2 text-white">$125.40</div>
+                        <div class="text-xs text-dim mb-6">National Rank: <span class="text-red-400 font-bold">Rank 39</span></div>
                         <div class="drag-box text-sm">
                             <span class="text-dim text-xs uppercase tracking-wider">Primary Drag</span>
-                            <span class="text-red-500 font-bold bg-red-950/30 px-2 py-1 rounded">[DRAG_TECH_REV_NAME] ([DRAG_TECH_REV_VALUE])</span>
+                            <span class="text-red-500 font-bold bg-red-950/30 px-2 py-1 rounded">Bryan Dorward ($92.40)</span>
                         </div>
                     </div>
                     <div class="card p-6 relative hover:border-green-900 transition-colors">
                         <div class="absolute top-5 right-5 text-xl opacity-50">✓</div>
                         <h3 class="text-xs uppercase tracking-widest text-dim mb-3 font-semibold">Completion (DCR)</h3>
-                        <div class="text-4xl font-black mb-2 text-white">[OFFICE_DCR]</div>
-                        <div class="text-xs text-dim mb-6">National Rank: <span class="text-green-500 font-bold">[OFFICE_DCR_RANK]</span></div>
+                        <div class="text-4xl font-black mb-2 text-white">81.4%</div>
+                        <div class="text-xs text-dim mb-6">National Rank: <span class="text-green-500 font-bold">Rank 14</span></div>
                         <div class="drag-box text-sm">
                             <span class="text-dim text-xs uppercase tracking-wider">Primary Drag</span>
-                            <span class="text-red-500 font-bold bg-red-950/30 px-2 py-1 rounded">[DRAG_TECH_DCR_NAME] ([DRAG_TECH_DCR_VALUE])</span>
+                            <span class="text-red-500 font-bold bg-red-950/30 px-2 py-1 rounded">Cody Yeaw (68.4%)</span>
                         </div>
                     </div>
                     <div class="card p-6 relative hover:border-red-900 transition-colors">
                         <div class="absolute top-5 right-5 text-xl opacity-50">♥</div>
                         <h3 class="text-xs uppercase tracking-widest text-dim mb-3 font-semibold">Active Care 10D</h3>
-                        <div class="text-4xl font-black mb-2 text-white">[OFFICE_AC10]</div>
-                        <div class="text-xs text-dim mb-6">National Rank: <span class="text-red-400 font-bold">[OFFICE_AC10_RANK]</span></div>
+                        <div class="text-4xl font-black mb-2 text-white">8.4%</div>
+                        <div class="text-xs text-dim mb-6">National Rank: <span class="text-red-400 font-bold">Rank 41</span></div>
                         <div class="drag-box text-sm">
                             <span class="text-dim text-xs uppercase tracking-wider">Primary Drag</span>
-                            <span class="text-red-500 font-bold bg-red-950/30 px-2 py-1 rounded">[DRAG_TECH_AC10_NAME] ([DRAG_TECH_AC10_VALUE])</span>
+                            <span class="text-red-500 font-bold bg-red-950/30 px-2 py-1 rounded">Nicole Mallette (19.4%)</span>
                         </div>
                     </div>
                 </div>
@@ -128,13 +125,13 @@ html_template = """<!DOCTYPE html>
                             <div class="bg-[#1a1a1a] p-4 rounded-lg flex justify-between items-center border border-[#333]">
                                 <div>
                                     <div class="flex items-center space-x-3 mb-1">
-                                        <span class="text-gray-500 text-sm font-black">[LEADER_1_RANK]</span>
-                                        <span class="font-bold text-white">[LEADER_1_NAME]</span>
+                                        <span class="text-gray-500 text-sm font-black">Rank 1</span>
+                                        <span class="font-bold text-white">Boston South</span>
                                     </div>
-                                    <div class="text-[11px] text-gray-500 font-mono">PPH: [LEADER_1_PPH] | DCR: [LEADER_1_DCR]</div>
+                                    <div class="text-[11px] text-gray-500 font-mono">PPH: 2.15 | DCR: 89.2%</div>
                                 </div>
                                 <div class="text-right">
-                                    <div class="font-bold text-white text-lg">[LEADER_1_REV]</div>
+                                    <div class="font-bold text-white text-lg">$168.20</div>
                                     <div class="text-[10px] text-dim uppercase tracking-wider">Avg $/WO</div>
                                 </div>
                             </div>
@@ -142,13 +139,13 @@ html_template = """<!DOCTYPE html>
                                 <div class="absolute left-0 top-0 bottom-0 w-1 bg-red-600"></div>
                                 <div class="pl-2">
                                     <div class="flex items-center space-x-3 mb-1">
-                                        <span class="text-red-400 text-sm font-black">[OFFICE_RANK]</span>
-                                        <span class="font-bold text-white">[OFFICE_NAME]</span>
+                                        <span class="text-red-400 text-sm font-black">Rank 38</span>
+                                        <span class="font-bold text-white">Boston North</span>
                                     </div>
-                                    <div class="text-[11px] text-red-300 font-mono">PPH: [OFFICE_PPH] | DCR: [OFFICE_DCR]</div>
+                                    <div class="text-[11px] text-red-300 font-mono">PPH: 1.66 | DCR: 81.4%</div>
                                 </div>
                                 <div class="text-right">
-                                    <div class="font-bold text-white text-lg">[OFFICE_REVENUE]</div>
+                                    <div class="font-bold text-white text-lg">$125.40</div>
                                     <div class="text-[10px] text-red-300 uppercase tracking-wider">Avg $/WO</div>
                                 </div>
                             </div>
@@ -168,23 +165,23 @@ html_template = """<!DOCTYPE html>
                             <div class="bg-[#181818] p-5 rounded-lg border border-[#333]">
                                 <div class="flex justify-between items-start mb-6">
                                     <div>
-                                        <h4 class="font-bold text-white text-lg mb-1">[FSM_1_NAME]</h4>
-                                        <div class="text-xs text-dim">Techs: <span class="text-gray-300">[FSM_1_TECHS_COUNT]</span></div>
+                                        <h4 class="font-bold text-white text-lg mb-1">Scott Tuman</h4>
+                                        <div class="text-xs text-dim">Team: <span class="text-gray-300">Bigfoot's Brawlers</span></div>
                                     </div>
-                                    <span class="bg-yellow-900/30 text-yellow-500 text-[10px] px-2.5 py-1 rounded border border-yellow-700/50 uppercase tracking-wider font-bold">[FSM_1_FOCUS_AREA]</span>
+                                    <span class="bg-yellow-900/30 text-yellow-500 text-[10px] px-2.5 py-1 rounded border border-yellow-700/50 uppercase tracking-wider font-bold">Revenue & PPH Focus</span>
                                 </div>
                                 <div class="space-y-4 text-sm font-mono">
                                     <div class="flex justify-between border-b border-[#2a2a2a] pb-2">
                                         <span class="text-dim">Team PPH Avg</span>
-                                        <span class="text-white">[FSM_1_PPH]</span>
+                                        <span class="text-white">1.60</span>
                                     </div>
                                     <div class="flex justify-between border-b border-[#2a2a2a] pb-2">
                                         <span class="text-dim">Team Rev Avg</span>
-                                        <span class="text-white">[FSM_1_REV]</span>
+                                        <span class="text-white">$121.50</span>
                                     </div>
                                     <div class="flex justify-between border-b border-[#2a2a2a] pb-2">
                                         <span class="text-dim">Team DCR Avg</span>
-                                        <span class="text-white">[FSM_1_DCR]</span>
+                                        <span class="text-white">83.5%</span>
                                     </div>
                                 </div>
                             </div>
@@ -192,23 +189,23 @@ html_template = """<!DOCTYPE html>
                             <div class="bg-[#181818] p-5 rounded-lg border border-[#333]">
                                 <div class="flex justify-between items-start mb-6">
                                     <div>
-                                        <h4 class="font-bold text-white text-lg mb-1">[FSM_2_NAME]</h4>
-                                        <div class="text-xs text-dim">Techs: <span class="text-gray-300">[FSM_2_TECHS_COUNT]</span></div>
+                                        <h4 class="font-bold text-white text-lg mb-1">Tom Coates</h4>
+                                        <div class="text-xs text-dim">Team: <span class="text-gray-300">Tomcats</span></div>
                                     </div>
-                                    <span class="bg-red-950/50 text-red-400 text-[10px] px-2.5 py-1 rounded border border-red-800 uppercase tracking-wider font-bold">[FSM_2_FOCUS_AREA]</span>
+                                    <span class="bg-red-950/50 text-red-400 text-[10px] px-2.5 py-1 rounded border border-red-800 uppercase tracking-wider font-bold">DCR & AC10 Focus</span>
                                 </div>
                                 <div class="space-y-4 text-sm font-mono">
                                     <div class="flex justify-between border-b border-[#2a2a2a] pb-2">
                                         <span class="text-dim">Team PPH Avg</span>
-                                        <span class="text-white">[FSM_2_PPH]</span>
+                                        <span class="text-white">1.72</span>
                                     </div>
                                     <div class="flex justify-between border-b border-[#2a2a2a] pb-2">
                                         <span class="text-dim">Team Rev Avg</span>
-                                        <span class="text-white">[FSM_2_REV]</span>
+                                        <span class="text-white">$129.30</span>
                                     </div>
                                     <div class="flex justify-between border-b border-[#2a2a2a] pb-2">
                                         <span class="text-dim">Team DCR Avg</span>
-                                        <span class="text-white">[FSM_2_DCR]</span>
+                                        <span class="text-white">79.3%</span>
                                     </div>
                                 </div>
                             </div>
@@ -232,7 +229,7 @@ html_template = """<!DOCTYPE html>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-neutral-800">
-                                [DYNAMIC_COACHING_ROWS]
+                                <tr class="hover:bg-neutral-900/50"><td class="p-3 font-bold text-white">Nicole Mallette (Scott Tuman)</td><td class="p-3 text-amber-500">PPH / Productivity</td><td class="p-3 font-mono">1.21</td><td class="p-3 text-red-400">-0.11 Office PPH Drag</td><td class="p-3 text-gray-300">Conduct a step-by-step job cycle efficiency assessment. Look for gaps in tool staging, administrative delays in closing work orders, and off-route driving behavior. Target milestone updates.</td></tr><tr class="hover:bg-neutral-900/50"><td class="p-3 font-bold text-white">Bryan Dorward (Scott Tuman)</td><td class="p-3 text-yellow-500">Revenue per Job</td><td class="p-3 font-mono">$92.40</td><td class="p-3 text-red-400">-$8.20 Avg/WO Office Drag</td><td class="p-3 text-gray-300">Verify thoroughness of customer interactions and service catalog review. Check for missed opportunities to offer ancillary warranties, care products, or standard maintenance add-ons.</td></tr><tr class="hover:bg-neutral-900/50"><td class="p-3 font-bold text-white">Cody Yeaw (Tom Coates)</td><td class="p-3 text-red-500">DCR / Quality</td><td class="p-3 font-mono">68.4%</td><td class="p-3 text-red-400">-3.1% Office DCR Drag</td><td class="p-3 text-gray-300">Observe pre-departure vehicle inspections and component verification workflows. Enforce mandatory part testing protocols prior to leaving customer locations to stop re-trips.</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -243,7 +240,7 @@ html_template = """<!DOCTYPE html>
                 <h3 class="text-lg font-bold text-white mb-2">Office Rank Impact Simulator</h3>
                 <p class="text-sm text-dim mb-6">Adjust the sliders to see how lifting our outlier technicians automatically raises our office national rank.</p>
                 <div class="space-y-6 max-w-xl">
-                    [DYNAMIC_SIMULATOR_SLIDERS]
+                    <div><label class="block text-xs uppercase tracking-wider text-dim mb-2 font-mono">Nicole Mallette PPH (Current: 1.21 → Goal: 1.65)</label><input type="range" min="1.21" max="1.85" step="0.05" value="1.21" class="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-amber-500"></div><div><label class="block text-xs uppercase tracking-wider text-dim mb-2 font-mono">Bryan Dorward $/WO (Current: $92.40 → Goal: $120.00)</label><input type="range" min="92" max="150" step="5" value="92" class="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-yellow-500"></div><div><label class="block text-xs uppercase tracking-wider text-dim mb-2 font-mono">Cody Yeaw DCR (Current: 68.4% → Goal: 80.0%++)</label><input type="range" min="68" max="90" step="2" value="68" class="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-red-500"></div>
                 </div>
             </div>
 
@@ -252,17 +249,17 @@ html_template = """<!DOCTYPE html>
                     <h3 class="text-lg font-bold text-white">Automated FSM Weekly Focus Email</h3>
                     <button onclick="navigator.clipboard.writeText(document.getElementById('email-body').innerText); alert('Copied to clipboard!')" class="bg-amber-500 hover:bg-amber-600 text-black text-xs font-bold px-4 py-2 rounded">Copy Email Text</button>
                 </div>
-                <div id="email-body" class="bg-[#161616] border border-neutral-800 p-6 rounded-md font-mono text-sm whitespace-pre-wrap text-gray-300">[EMAIL_DRAFT_TEXT]</div>
+                <div id="email-body" class="bg-[#161616] border border-neutral-800 p-6 rounded-md font-mono text-sm whitespace-pre-wrap text-gray-300">Team,<br><br>We are sitting at Rank 38 nationally. While our top-tier performers are pacing exceptionally well, our overall office rank is being significantly dragged down by just 3 highly targeted technician outliers. Field coaching time spent here will yield maximum ROI.<br><br>Coaching Priorities for This Week:<br>1. Nicole Mallette (FSM: Scott Tuman) - Target: PPH (Current: 1.21)<br>   * Focus: Conduct a step-by-step job cycle efficiency assessment. Look for gaps in tool staging, administrative delays in closing work orders, and off-route driving behavior.<br>2. Bryan Dorward (FSM: Scott Tuman) - Target: Revenue per Job (Current: $92.40)<br>   * Focus: Verify thoroughness of customer interactions and service catalog review. Check for missed opportunities to offer ancillary warranties or add-ons.<br>3. Cody Yeaw (FSM: Tom Coates) - Target: DCR / Quality (Current: 68.4%)<br>   * Focus: Observe pre-departure vehicle inspections and component verification workflows. Enforce mandatory part testing protocols prior to leaving.<br><br>The "Why" (Impact Projection):<br>Lifting Nicole to a 1.65 PPH, moving Bryan to $120.00/WO, and executing a quality restart with Cody to reach 80%+ DCR will automatically move Boston North from Rank 38 into the Top 25 within 14 days.<br><br>Next Steps:<br>Scott and Tom, please schedule mandatory full-day field rides with these targets before Friday and log your field forms in the tracking system. Let's capture this clear win!</div>
             </div>
 
             <div id="playbook-content" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="card p-6">
                     <h3 class="font-bold text-amber-500 mb-2">⚡ PPH/Productivity Playbook</h3>
-                    <p class="text-sm text-dim leading-relaxed">[PPH_PLAYBOOK_STEPS]</p>
+                    <p class="text-sm text-dim leading-relaxed">Conduct a step-by-step job cycle efficiency assessment. Look for gaps in tool staging, administrative delays in closing work orders, and off-route driving behavior. Target milestone updates.</p>
                 </div>
                 <div class="card p-6">
                     <h3 class="font-bold text-red-500 mb-2">✓ DCR / Quality Playbook</h3>
-                    <p class="text-sm text-dim leading-relaxed">[DCR_PLAYBOOK_STEPS]</p>
+                    <p class="text-sm text-dim leading-relaxed">Observe pre-departure vehicle inspections and component verification workflows. Enforce mandatory part testing protocols prior to leaving customer locations to stop re-trips.</p>
                 </div>
             </div>
         </div>
@@ -307,126 +304,4 @@ html_template = """<!DOCTYPE html>
         });
     </script>
 </body>
-</html>"""
-
-# Python strings for multi-line variables to prevent HTML breaks
-email_draft_text = """Subject: URGENT: MTD Field Focus & Office Rank Optimization - Concord
-
-Team,
-
-Our current MTD performance sits at Rank 45 for PPH and Rank 52 for Revenue. Our data clearly shows this isn't an office-wide issue; our rank is primarily being dragged down by a few highly salvageable outliers. By focusing our ride-alongs this week strategically, we can rapidly lift the overall office ranking before month-end.
-
-COACHING PRIORITIES:
-* Isiah deLancey (Tom Coates) - Target: PPH (1.5). Playbook Observation: Focus on routing efficiency, truck stocking habits, and transition times between jobs. 
-* Mark Thompson (Tom Coates) - Target: Revenue ($155). Playbook Observation: Review diagnostic processes and ensure all value-add services are being properly positioned to the customer.
-* Robert Bianco (Scott Tuman) - Target: DCR (88%). Playbook Observation: Audit part-ordering accuracy and verify complete diagnostics are performed to prevent callbacks.
-
-THE "WHY" (Impact Projection):
-Incremental Improvement Goal: If Isiah and Mark improve their PPH by just 0.4 and Revenue by $20/WO, Tom's team average will rise significantly, pushing the Concord office PPH to 2.25 and Revenue to $195. This small shift projects a jump of at least 15 spots in the national ranking by month-end.
-
-NEXT STEPS:
-Scott & Tom, please schedule at least one half-day ride-along with your targeted techs within the next 48 hours. Focus strictly on these single metrics to avoid overwhelming them. Let's get out in the field and turn this around!"""
-
-pph_playbook_steps = """1. Pre-shift Preparation: Ensure truck is fully stocked the night before to eliminate morning warehouse delays.<br>
-2. Route Optimization: Review the daily route map to minimize windshield time and call ahead to confirm customer availability.<br>
-3. Efficient Diagnostics: Stick to the standard diagnostic checklist to avoid 'rabbit holes' and quickly identify the core issue.<br>
-4. Clean Transitions: Close out work orders in the system immediately upon job completion while still on-site to maintain accurate timestamps."""
-
-dcr_playbook_steps = """1. Right Part, First Time: Double-check model numbers and required components before placing any part orders.<br>
-2. Holistic Diagnostics: Don't just treat the symptom; test the entire system to ensure no secondary failures will cause a callback tomorrow.<br>
-3. Customer Education: Walk the customer through the repair and proper maintenance to prevent user-error callbacks.<br>
-4. Quality Assurance Run: Always run the unit through a full cycle post-repair before leaving the home."""
-
-dynamic_coaching_rows = """
-<tr>
-    <td class="p-3 text-white font-medium">Isiah deLancey (Tomcoats)</td>
-    <td class="p-3 text-red-400">PPH & DCR</td>
-    <td class="p-3">1.5 PPH | 85% DCR</td>
-    <td class="p-3 text-red-500">High Drag on Rank 45</td>
-    <td class="p-3">FSM Ride-along: Route Efficiency & Truck Stock</td>
-</tr>
-<tr>
-    <td class="p-3 text-white font-medium">Mark Thompson (Tomcoats)</td>
-    <td class="p-3 text-yellow-400">Revenue / WO</td>
-    <td class="p-3">$155/WO</td>
-    <td class="p-3 text-red-500">High Drag on Rank 52</td>
-    <td class="p-3">FSM Ride-along: Value-add Positioning</td>
-</tr>
-<tr>
-    <td class="p-3 text-white font-medium">Robert Bianco (Brawlers)</td>
-    <td class="p-3 text-red-400">DCR</td>
-    <td class="p-3">88% DCR</td>
-    <td class="p-3 text-yellow-500">Moderate Drag on Rank 12</td>
-    <td class="p-3">FSM Ride-along: Diagnostic Completeness</td>
-</tr>
-"""
-
-dynamic_simulator_sliders = """
-<div>
-    <label class="block text-sm font-medium text-white mb-2">Isiah deLancey PPH Target (Current: 1.5)</label>
-    <input type="range" min="1.5" max="2.5" step="0.1" value="1.9" class="w-full h-2 bg-neutral-700 rounded-lg appearance-none cursor-pointer">
-    <div class="flex justify-between text-xs text-dim mt-1"><span>1.5 (Rank 45)</span><span>2.5 (Projected Rank 28)</span></div>
-</div>
-<div>
-    <label class="block text-sm font-medium text-white mb-2">Mark Thompson Revenue Target (Current: $155)</label>
-    <input type="range" min="155" max="220" step="5" value="175" class="w-full h-2 bg-neutral-700 rounded-lg appearance-none cursor-pointer">
-    <div class="flex justify-between text-xs text-dim mt-1"><span>$155 (Rank 52)</span><span>$220 (Projected Rank 35)</span></div>
-</div>
-"""
-
-replacements = {
-    "[OFFICE_INITIAL]": "C",
-    "[OFFICE_NAME]": "Concord",
-    "[OFFICE_PPH]": "2.1",
-    "[OFFICE_PPH_RANK]": "45",
-    "[OFFICE_REVENUE]": "$185",
-    "[OFFICE_REVENUE_RANK]": "52",
-    "[OFFICE_DCR]": "92%",
-    "[OFFICE_DCR_RANK]": "12",
-    "[OFFICE_AC10]": "15%",
-    "[OFFICE_AC10_RANK]": "60",
-    "[OFFICE_RANK]": "42",
-    "[FSM_TARGET_TECHS]": "Isiah deLancey and Mark Thompson",
-    "[DRAG_TECH_PPH_NAME]": "Isiah deLancey",
-    "[DRAG_TECH_PPH_VALUE]": "1.5 PPH",
-    "[DRAG_TECH_REV_NAME]": "Mark Thompson",
-    "[DRAG_TECH_REV_VALUE]": "$155",
-    "[DRAG_TECH_DCR_NAME]": "Isiah deLancey",
-    "[DRAG_TECH_DCR_VALUE]": "85%",
-    "[DRAG_TECH_AC10_NAME]": "Isiah deLancey",
-    "[DRAG_TECH_AC10_VALUE]": "12%",
-    "[LEADER_1_RANK]": "1",
-    "[LEADER_1_NAME]": "Bradley Patten",
-    "[LEADER_1_PPH]": "2.4",
-    "[LEADER_1_DCR]": "97%",
-    "[LEADER_1_REV]": "$220",
-    "[FSM_1_NAME]": "Scott Tuman",
-    "[FSM_1_TECHS_COUNT]": "8",
-    "[FSM_1_FOCUS_AREA]": "Quality Control (DCR)",
-    "[FSM_1_PPH]": "2.31",
-    "[FSM_1_REV]": "$191.88",
-    "[FSM_1_DCR]": "92.9%",
-    "[FSM_2_NAME]": "Tom Coates",
-    "[FSM_2_TECHS_COUNT]": "8",
-    "[FSM_2_FOCUS_AREA]": "Productivity & Revenue",
-    "[FSM_2_PPH]": "1.88",
-    "[FSM_2_REV]": "$178.13",
-    "[FSM_2_DCR]": "91.0%",
-    "[EMAIL_DRAFT_TEXT]": email_draft_text,
-    "[PPH_PLAYBOOK_STEPS]": pph_playbook_steps,
-    "[DCR_PLAYBOOK_STEPS]": dcr_playbook_steps,
-    "[DYNAMIC_COACHING_ROWS]": dynamic_coaching_rows,
-    "[DYNAMIC_SIMULATOR_SLIDERS]": dynamic_simulator_sliders
-}
-
-# Apply replacements
-output_html = html_template
-for key, val in replacements.items():
-    output_html = output_html.replace(key, val)
-
-# Save to file
-file_name = "Concord_Leadership_Dashboard.html"
-with open(file_name, "w", encoding="utf-8") as f:
-    f.write(output_html)
-
-print(f"Success! HTML Dashboard saved locally as: {file_name}")
+</html>
