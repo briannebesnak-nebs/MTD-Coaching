@@ -229,11 +229,39 @@
             </div>
 
             <div id="email-content" class="tab-content hidden card p-6">
-                <div class="flex justify-between items-center mb-4">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
                     <h3 class="text-lg font-bold text-white">Automated FSM Weekly Focus Email</h3>
-                    <button onclick="navigator.clipboard.writeText(document.getElementById('email-body').innerText); alert('Copied to clipboard!')" class="bg-amber-500 hover:bg-amber-600 text-black text-xs font-bold px-4 py-2 rounded">Copy Email Text</button>
+                    <div class="flex gap-2">
+                        <button onclick="navigator.clipboard.writeText(document.getElementById('email-body-text').innerText); alert('Copied to clipboard!')" class="bg-neutral-700 hover:bg-neutral-600 text-white text-xs font-bold px-4 py-2 rounded transition-colors">Copy Text</button>
+                        <button onclick="sendEmail()" class="bg-amber-500 hover:bg-amber-600 text-black text-xs font-bold px-4 py-2 rounded flex items-center gap-2 shadow-[0_0_10px_rgba(245,158,11,0.3)] transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            Send to ihsmgmtconcord@dish.com
+                        </button>
+                    </div>
                 </div>
-                <div id="email-body" class="bg-[#161616] border border-neutral-800 p-6 rounded-md font-mono text-sm whitespace-pre-wrap text-gray-300">SUBJECT: MONDAY BATTLE PLAN - Urgent MTD Coaching Focus Required for Concord (Rank 21)
+                <!-- Rendered Rich Text View -->
+                <div id="email-body-html" class="bg-[#161616] border border-neutral-800 p-6 rounded-md text-sm whitespace-pre-wrap text-gray-300 font-sans shadow-inner">
+<strong>SUBJECT:</strong> TUESDAY BATTLE PLAN - Urgent MTD Coaching Focus Required for Concord (Rank 21)<br><br>
+Tom & Scott,<br><br>
+We have analyzed the latest MTD scorecard data and identified the exact isolated metric drags holding back our overall office rank. To systematically drive our leaderboard placement up, we need immediate front-end observation and 1:1 ride-alongs focused strictly on behavioral diagnostics and skill-gap identification today.<br><br>
+🏆 <strong>Top Performer Spotlight:</strong><br>
+Huge recognition to <strong>Vokis Jean</strong> on Tom's team for setting the pace!<br>
+- 5.84 PPH | $34.32 $/WO | 96.77% DCR | 0.00% R12<br><br>
+🚨 <strong>Primary Action Targets & Metric Drags:</strong><br>
+* <strong>Justin Ross (Tom Coates)</strong> - PPH Drag: Currently sitting at 3.20 (Office Avg: 5.10).<br>
+Action: Front-end timeline observation to eliminate transitional friction.<br>
+* <strong>Justin Martineau (Scott Tuman)</strong> - Revenue Drag: Currently sitting at $0.00 $/WO (Office Avg: $29.57).<br>
+Action: Ride-along to observe SHS pitch alignment and diagnostic routines.<br>
+* <strong>Kevin S Tolan (Tom Coates)</strong> - DCR & R12% Drag: Currently sitting at 76.19% DCR and 18.75% R12 (Office Avg: 91.48% DCR / 4.66% R12).<br>
+Action: 1:1 behavioral diagnostic focused strictly on installation schematic alignment workflows prior to closure.<br><br>
+<strong>Resources:</strong><br>
+* <a href="https://briannebesnak-nebs.github.io/MTD-Coaching/" class="text-blue-400 hover:text-blue-300 underline font-bold" target="_blank">MTD Coaching Playbook</a><br><br>
+Coordinate your focus targets for today and let’s systematically clear these blockers.<br><br>
+Best,<br>
+MTD Focus Analyst
+                </div>
+                <!-- Hidden Raw Text for Clipboard Copying -->
+                <div id="email-body-text" class="hidden">SUBJECT: TUESDAY BATTLE PLAN - Urgent MTD Coaching Focus Required for Concord (Rank 21)
 
 Tom & Scott,
 
@@ -252,7 +280,7 @@ Action: Ride-along to observe SHS pitch alignment and diagnostic routines.
 Action: 1:1 behavioral diagnostic focused strictly on installation schematic alignment workflows prior to closure.
 
 **Resources:**
-* **[MTD Coaching Playbook](https://briannebesnak-nebs.github.io/MTD-Coaching/)**
+* MTD Coaching Playbook: https://briannebesnak-nebs.github.io/MTD-Coaching/
 
 Coordinate your focus targets for today and let’s systematically clear these blockers.
 
@@ -273,11 +301,43 @@ MTD Focus Analyst</div>
         </div>
         
         <div class="mt-12 border-t border-neutral-900 pt-8 pb-4 text-center text-xs text-dim">
-            FSM Leadership Dashboard V1.2 | MTD Focus Gem Automated Output
+            FSM Leadership Dashboard V1.3 | MTD Focus Gem Automated Output
         </div>
     </div>
 
     <script>
+        // Mailto Execution Protocol
+        function sendEmail() {
+            const email = "ihsmgmtconcord@dish.com";
+            const subject = encodeURIComponent("TUESDAY BATTLE PLAN - Urgent MTD Coaching Focus Required for Concord (Rank 21)");
+            const bodyText = `Tom & Scott,
+
+We have analyzed the latest MTD scorecard data and identified the exact isolated metric drags holding back our overall office rank. To systematically drive our leaderboard placement up, we need immediate front-end observation and 1:1 ride-alongs focused strictly on behavioral diagnostics and skill-gap identification today.
+
+🏆 Top Performer Spotlight:
+Huge recognition to Vokis Jean on Tom's team for setting the pace! 
+- 5.84 PPH | $34.32 $/WO | 96.77% DCR | 0.00% R12
+
+🚨 Primary Action Targets & Metric Drags:
+* Justin Ross (Tom Coates) - PPH Drag: Currently sitting at 3.20 (Office Avg: 5.10). 
+Action: Front-end timeline observation to eliminate transitional friction.
+* Justin Martineau (Scott Tuman) - Revenue Drag: Currently sitting at $0.00 $/WO (Office Avg: $29.57). 
+Action: Ride-along to observe SHS pitch alignment and diagnostic routines.
+* Kevin S Tolan (Tom Coates) - DCR & R12% Drag: Currently sitting at 76.19% DCR and 18.75% R12 (Office Avg: 91.48% DCR / 4.66% R12). 
+Action: 1:1 behavioral diagnostic focused strictly on installation schematic alignment workflows prior to closure.
+
+**Resources:**
+* MTD Coaching Playbook: https://briannebesnak-nebs.github.io/MTD-Coaching/
+
+Coordinate your focus targets for today and let’s systematically clear these blockers.
+
+Best,
+MTD Focus Analyst`;
+            
+            const body = encodeURIComponent(bodyText);
+            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
             const tabs = document.querySelectorAll('nav button');
             const contents = document.querySelectorAll('.tab-content');
