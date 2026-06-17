@@ -8,6 +8,7 @@
 <style>
     body { background-color: #050505; color: #f3f4f6; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     .card { background-color: #121212; border: 1px solid #2a2a2a; border-radius: 0.5rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5); }
+    .red-accent { color: #ff3333; }
     .red-bg { background-color: #cc0000; }
     .red-border { border-color: #cc0000; }
     .text-dim { color: #9ca3af; }
@@ -29,9 +30,9 @@
             <div class="flex flex-wrap gap-3 text-sm">
                 <div class="card px-4 py-2 text-dim flex items-center gap-2 border-amber-600/30 bg-amber-950/10">Rank: <span class="text-amber-500 font-bold">23</span></div>
                 <div class="card px-4 py-2 text-dim flex items-center gap-2">PPH: <span class="text-white font-bold">5.12</span></div>
-                <div class="card px-4 py-2 text-dim flex items-center gap-2">$/WO: <span class="text-white font-bold">29.57</span></div>
+                <div class="card px-4 py-2 text-dim flex items-center gap-2">$/WO: <span class="text-white font-bold">$29.57</span></div>
                 <div class="card px-4 py-2 text-dim flex items-center gap-2">DCR: <span class="text-white font-bold">90.54%</span></div>
-                <div class="card px-4 py-2 text-dim flex items-center gap-2">R12%: <span class="text-white font-bold">5%</span></div>
+                <div class="card px-4 py-2 text-dim flex items-center gap-2">R12%: <span class="text-white font-bold">4.39%</span></div>
             </div>
         </div>
         
@@ -72,7 +73,7 @@
                         <div class="p-4 border-b border-[#2a2a2a] flex items-center justify-between bg-gradient-to-r from-[#1a1a1a] to-[#121212]">
                             <div class="flex items-center space-x-2">
                                 <span class="text-amber-500 text-lg">📊</span>
-                                <h3 class="font-bold text-white uppercase tracking-wider text-sm">Scott Tuman Team Overview</h3>
+                                <h3 class="font-bold text-white uppercase tracking-wider text-sm">Concord Team Overview</h3>
                             </div>
                         </div>
                         <div class="flex flex-col lg:flex-row flex-grow">
@@ -80,24 +81,24 @@
                                 <h4 class="text-[10px] text-dim uppercase tracking-widest mb-3 font-bold">Top Performers</h4>
                                 <div class="bg-[#1a1a1a] p-3 rounded flex justify-between items-center border border-[#333] mb-3">
                                     <div class="text-xs text-dim">Overall #1</div>
-                                    <div class="font-bold text-amber-400 text-sm">Robert M Bianco</div>
+                                    <div class="font-bold text-amber-400 text-sm">Bianco, Robert M</div>
                                 </div>
                                 <div class="grid grid-cols-2 gap-2 text-xs">
                                     <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
                                         <span class="text-[10px] text-dim block mb-1 uppercase tracking-wider">PPH Leader</span>
-                                        <div class="flex justify-between items-center"><span class="font-bold text-gray-200 truncate pr-1">Robert M Bianco</span><span class="font-mono text-[11px] text-green-400">7.02</span></div>
+                                        <div class="flex justify-between items-center"><span class="font-bold text-gray-200 truncate pr-1">Bianco, Robert M</span><span class="font-mono text-[11px] text-green-400">7.02</span></div>
                                     </div>
                                     <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
                                         <span class="text-[10px] text-dim block mb-1 uppercase tracking-wider">$/WO Leader</span>
-                                        <div class="flex justify-between items-center"><span class="font-bold text-gray-200 truncate pr-1">Kaden M Smith</span><span class="font-mono text-[11px] text-green-400">57.36</span></div>
+                                        <div class="flex justify-between items-center"><span class="font-bold text-gray-200 truncate pr-1">Smith, Kaden M</span><span class="font-mono text-[11px] text-green-400">$57.36</span></div>
                                     </div>
                                     <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
                                         <span class="text-[10px] text-dim block mb-1 uppercase tracking-wider">DCR Leader</span>
-                                        <div class="flex justify-between items-center"><span class="font-bold text-gray-200 truncate pr-1">Jeremy Gonzalez</span><span class="font-mono text-[11px] text-green-400">100%</span></div>
+                                        <div class="flex justify-between items-center"><span class="font-bold text-gray-200 truncate pr-1">Thompson, Mark A.</span><span class="font-mono text-[11px] text-green-400">100%</span></div>
                                     </div>
                                     <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
                                         <span class="text-[10px] text-dim block mb-1 uppercase tracking-wider">R12% Leader</span>
-                                        <div class="flex justify-between items-center"><span class="font-bold text-gray-200 truncate pr-1">Kaden M Smith</span><span class="font-mono text-[11px] text-green-400">0%</span></div>
+                                        <div class="flex justify-between items-center"><span class="font-bold text-gray-200 truncate pr-1">Smith, Kaden M</span><span class="font-mono text-[11px] text-green-400">0.00%</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -105,53 +106,295 @@
                                 <h4 class="text-[10px] text-red-500 uppercase tracking-widest mb-3 font-bold">Primary Targets & Goals</h4>
                                 <div class="space-y-2 text-xs">
                                     <div class="flex justify-between items-center bg-[#1a0505] p-2 rounded border border-[#330000]">
-                                        <div class="truncate pr-2"><span class="text-dim text-[10px] uppercase tracking-wider mr-1">PPH:</span> <span class="text-gray-300 font-medium">Ryan Vodvarka</span></div>
-                                        <div class="text-red-400 font-mono text-[11px] whitespace-nowrap">Goal: 5.12</div>
+                                        <div class="truncate pr-2"><span class="text-dim text-[10px] uppercase tracking-wider mr-1">PPH:</span> <span class="text-gray-300 font-medium">Ross, Justin</span></div>
+                                        <div class="text-red-400 font-mono text-[11px] whitespace-nowrap">Goal: +1.92</div>
                                     </div>
                                     <div class="flex justify-between items-center bg-[#1a0505] p-2 rounded border border-[#330000]">
-                                        <div class="truncate pr-2"><span class="text-dim text-[10px] uppercase tracking-wider mr-1">R12%:</span> <span class="text-gray-300 font-medium">Justin Martineau</span></div>
-                                        <div class="text-red-400 font-mono text-[11px] whitespace-nowrap">Goal: 5%</div>
+                                        <div class="truncate pr-2"><span class="text-dim text-[10px] uppercase tracking-wider mr-1">$/WO:</span> <span class="text-gray-300 font-medium">Vodvarka, Ryan</span></div>
+                                        <div class="text-red-400 font-mono text-[11px] whitespace-nowrap">Goal: +$29.57</div>
+                                    </div>
+                                    <div class="flex justify-between items-center bg-[#1a0505] p-2 rounded border border-[#330000]">
+                                        <div class="truncate pr-2"><span class="text-dim text-[10px] uppercase tracking-wider mr-1">DCR:</span> <span class="text-gray-300 font-medium">Vodvarka, Ryan</span></div>
+                                        <div class="text-red-400 font-mono text-[11px] whitespace-nowrap">Goal: +28.04%</div>
+                                    </div>
+                                    <div class="flex justify-between items-center bg-[#1a0505] p-2 rounded border border-[#330000]">
+                                        <div class="truncate pr-2"><span class="text-dim text-[10px] uppercase tracking-wider mr-1">R12%:</span> <span class="text-gray-300 font-medium">Tolan, Kevin S</span></div>
+                                        <div class="text-red-400 font-mono text-[11px] whitespace-nowrap">Goal: -14.36%</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card p-0 flex flex-col h-full border border-neutral-800 overflow-hidden">
-                        <div class="p-4 border-b border-[#2a2a2a] flex items-center justify-between bg-gradient-to-r from-[#1a1a1a] to-[#121212]">
-                            <div class="flex items-center space-x-2">
-                                <span class="text-amber-500 text-lg">📊</span>
-                                <h3 class="font-bold text-white uppercase tracking-wider text-sm">Tom Coates Team Overview</h3>
+                </div>
+            </div>
+            
+            <div id="outliers-content" class="tab-content hidden space-y-6">
+                <div class="card p-6">
+                    <h3 class="text-lg font-bold text-white mb-4">Critical Coaching Targets & Improvement Goals (By FSM)</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm text-dim">
+                            <thead class="text-xs uppercase bg-[#1a1a1a] text-white">
+                                <tr>
+                                    <th class="p-3">FSM Team</th>
+                                    <th class="p-3">Technician</th>
+                                    <th class="p-3">Primary Drag Metric</th>
+                                    <th class="p-3">Current MTD</th>
+                                    <th class="p-3">Improvement Goal (To Office Avg)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-neutral-800">
+                                <tr>
+                                    <td class="p-3 font-bold text-white">Concord</td>
+                                    <td class="p-3 text-red-400">Ross, Justin</td>
+                                    <td class="p-3">PPH</td>
+                                    <td class="p-3 font-mono">3.20</td>
+                                    <td class="p-3 font-bold text-amber-500">+1.92 PPH</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-white">Concord</td>
+                                    <td class="p-3 text-red-400">Vodvarka, Ryan</td>
+                                    <td class="p-3">$/WO</td>
+                                    <td class="p-3 font-mono">$0.00</td>
+                                    <td class="p-3 font-bold text-amber-500">+$29.57</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-white">Concord</td>
+                                    <td class="p-3 text-red-400">Vodvarka, Ryan</td>
+                                    <td class="p-3">DCR</td>
+                                    <td class="p-3 font-mono">62.50%</td>
+                                    <td class="p-3 font-bold text-amber-500">+28.04%</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-white">Concord</td>
+                                    <td class="p-3 text-red-400">Tolan, Kevin S</td>
+                                    <td class="p-3">R12%</td>
+                                    <td class="p-3 font-mono">18.75%</td>
+                                    <td class="p-3 font-bold text-amber-500">-14.36%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="email-content" class="tab-content hidden card p-6">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                    <h3 class="text-lg font-bold text-white">Automated FSM Weekly Focus Email</h3>
+                    <div class="flex gap-2">
+                        <button onclick="navigator.clipboard.writeText(document.getElementById('email-body-text').innerText); alert('Copied to clipboard!')" class="bg-neutral-700 hover:bg-neutral-600 text-white text-xs font-bold px-4 py-2 rounded transition-colors">Copy Text</button>
+                        <button onclick="sendEmail()" class="bg-amber-500 hover:bg-amber-600 text-black text-xs font-bold px-4 py-2 rounded flex items-center gap-2 shadow-[0_0_10px_rgba(245,158,11,0.3)] transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            Send via Gmail
+                        </button>
+                    </div>
+                </div>
+                <div id="email-body-html" class="bg-[#161616] border border-neutral-800 p-6 rounded-md text-sm whitespace-pre-wrap text-gray-300 font-sans shadow-inner overflow-y-auto max-h-[600px]"><strong>Subject: Concord Office Weekly Focus - Rank 23</strong>
+
+Team,
+
+We are currently sitting at Rank 23 overall. To climb the leaderboard, we need to continue rewarding our high performers while executing targeted root-cause coaching with the isolated metrics holding us back. 
+
+You can view the interactive FSM Leadership Dashboard for full coaching details here:
+<a href="https://briannebesnak-nebs.github.io/MTD-Coaching/" class="text-amber-500 hover:underline">https://briannebesnak-nebs.github.io/MTD-Coaching/</a>
+
+<strong>🏆 Concord Team Shoutouts</strong>
+• <strong>Overall MVP:</strong> Bianco, Robert M
+• <strong>PPH Leader:</strong> Bianco, Robert M (7.02)
+• <strong>$/WO Leader:</strong> Smith, Kaden M ($57.36)
+• <strong>DCR Leader:</strong> Thompson, Mark Allen (100%)
+• <strong>R12% Leader:</strong> Smith, Kaden M (0.00%)
+
+<strong>🎯 Concord Team Coaching Targets & Gap Goals</strong>
+• <strong>PPH:</strong> Work with Ross, Justin (Goal: +1.92)
+• <strong>$/WO:</strong> Work with Vodvarka, Ryan (Goal: +$29.57)
+• <strong>DCR:</strong> Work with Vodvarka, Ryan (Goal: +28.04%)
+• <strong>R12%:</strong> Work with Tolan, Kevin S (Goal: -14.36%)
+
+Let's prioritize these conversations in our upcoming ride-alongs and 1-on-1s. Use the Coaching Playbook on the dashboard to attack the root behavioral blocks. 
+
+Best,
+MTD Focus</div>
+                <div id="email-body-text" class="hidden">Subject: Concord Office Weekly Focus - Rank 23
+
+Team,
+
+We are currently sitting at Rank 23 overall. To climb the leaderboard, we need to continue rewarding our high performers while executing targeted root-cause coaching with the isolated metrics holding us back. 
+
+You can view the interactive FSM Leadership Dashboard for full coaching details here:
+https://briannebesnak-nebs.github.io/MTD-Coaching/
+
+🏆 Concord Team Shoutouts
+• Overall MVP: Bianco, Robert M
+• PPH Leader: Bianco, Robert M (7.02)
+• $/WO Leader: Smith, Kaden M ($57.36)
+• DCR Leader: Thompson, Mark Allen (100%)
+• R12% Leader: Smith, Kaden M (0.00%)
+
+🎯 Concord Team Coaching Targets & Gap Goals
+• PPH: Work with Ross, Justin (Goal: +1.92)
+• $/WO: Work with Vodvarka, Ryan (Goal: +$29.57)
+• DCR: Work with Vodvarka, Ryan (Goal: +28.04%)
+• R12%: Work with Tolan, Kevin S (Goal: -14.36%)
+
+Let's prioritize these conversations in our upcoming ride-alongs and 1-on-1s. Use the Coaching Playbook on the dashboard to attack the root behavioral blocks. 
+
+Best,
+MTD Focus</div>
+            </div>
+
+            <div id="playbook-content" class="tab-content hidden space-y-6">
+                <div class="card p-6 bg-gradient-to-r from-[#1a1a1a] to-[#121212] border-l-4 border-amber-500">
+                    <h2 class="text-xl font-bold text-white mb-2">The Veteran's Playbook: Root Cause Coaching</h2>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Numbers on a dashboard are just symptoms. The root cause of metric drag is always either a <strong>behavioral block</strong> or a deviation from the <strong>Tech Step Document</strong>. When you sit down with your outliers, don't just point at the scoreboard—diagnose the specific step they are skipping or the mindset holding them back. Use these talking points during your ride-alongs and 1-on-1s.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="card p-6 border-t-2 border-blue-500 bg-[#0a0a0a]">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-2xl">⏱️</span>
+                            <h3 class="font-bold text-white text-lg tracking-wide uppercase">PPH (Productivity)</h3>
+                        </div>
+                        <div class="space-y-4 text-sm">
+                            <div>
+                                <h4 class="text-blue-400 font-bold uppercase tracking-widest text-[10px] mb-1">Step-by-Step Execution</h4>
+                                <p class="text-gray-300 bg-[#121212] p-3 rounded border border-[#222] leading-relaxed">
+                                    <strong>Audit the Pre-Arrival:</strong> Are they completing the inventory and tool check before knocking on the door? Most time is bled walking back to the van. Enforce the "One Trip" diagnostic setup strictly as outlined in the initial site-survey phase.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="text-amber-500 font-bold uppercase tracking-widest text-[10px] mb-1">Behavioral Coaching</h4>
+                                <p class="text-gray-300 bg-[#121212] p-3 rounded border border-[#222] leading-relaxed">
+                                    <strong>Watch for "Time Blindness":</strong> Do they chat too much after the work is done? Coach them on polite transition phrasing. "I'm so glad we got this working for you today! I need to wrap up my paperwork to get to my next customer, but do you have any final questions on the remote?"
+                                </p>
                             </div>
                         </div>
-                        <div class="flex flex-col lg:flex-row flex-grow">
-                            <div class="p-5 border-b lg:border-b-0 lg:border-r border-[#222] w-full lg:w-1/2">
-                                <h4 class="text-[10px] text-dim uppercase tracking-widest mb-3 font-bold">Top Performers</h4>
-                                <div class="bg-[#1a1a1a] p-3 rounded flex justify-between items-center border border-[#333] mb-3">
-                                    <div class="text-xs text-dim">Overall #1</div>
-                                    <div class="font-bold text-amber-400 text-sm">James V Babcock</div>
-                                </div>
-                                <div class="grid grid-cols-2 gap-2 text-xs">
-                                    <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
-                                        <span class="text-[10px] text-dim block mb-1 uppercase tracking-wider">PPH Leader</span>
-                                        <div class="flex justify-between items-center"><span class="font-bold text-gray-200 truncate pr-1">James V Babcock</span><span class="font-mono text-[11px] text-green-400">6.79</span></div>
-                                    </div>
-                                    <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
-                                        <span class="text-[10px] text-dim block mb-1 uppercase tracking-wider">$/WO Leader</span>
-                                        <div class="flex justify-between items-center"><span class="font-bold text-gray-200 truncate pr-1">Cory Parton</span><span class="font-mono text-[11px] text-green-400">46.33</span></div>
-                                    </div>
-                                    <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
-                                        <span class="text-[10px] text-dim block mb-1 uppercase tracking-wider">DCR Leader</span>
-                                        <div class="flex justify-between items-center"><span class="font-bold text-gray-200 truncate pr-1">James V Babcock</span><span class="font-mono text-[11px] text-green-400">97.14%</span></div>
-                                    </div>
-                                    <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
-                                        <span class="text-[10px] text-dim block mb-1 uppercase tracking-wider">R12% Leader</span>
-                                        <div class="flex justify-between items-center"><span class="font-bold text-gray-200 truncate pr-1">Isiah D deLancey</span><span class="font-mono text-[11px] text-green-400">0%</span></div>
-                                    </div>
-                                </div>
+                    </div>
+
+                    <div class="card p-6 border-t-2 border-green-500 bg-[#0a0a0a]">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-2xl">💵</span>
+                            <h3 class="font-bold text-white text-lg tracking-wide uppercase">$/WO (Revenue)</h3>
+                        </div>
+                        <div class="space-y-4 text-sm">
+                            <div>
+                                <h4 class="text-green-400 font-bold uppercase tracking-widest text-[10px] mb-1">Step-by-Step Execution</h4>
+                                <p class="text-gray-300 bg-[#121212] p-3 rounded border border-[#222] leading-relaxed">
+                                    <strong>Audit the Discovery Phase:</strong> Are they skipping the lifestyle questionnaire? The Tech Step Document requires evaluating the home for audio, Wi-Fi dead zones, and surge protection *before* starting the main install. 
+                                </p>
                             </div>
-                            <div class="p-5 w-full lg:w-1/2 bg-[#0f0f0f]">
-                                <h4 class="text-[10px] text-red-500 uppercase tracking-widest mb-3 font-bold">Primary Targets & Goals</h4>
-                                <div class="space-y-2 text-xs">
-                                    <div class="flex justify-between items-center bg-[#1a0505] p-2 rounded border border-[#330000]">
-                                        <div class="truncate pr-2"><span class="text-dim text-[10px] uppercase tracking-wider mr-1">DCR:</span> <span class="text-gray-300 font-medium">Kevin S Tolan</span></div>
-                                        <div class="text-red-400 font-mono text-
+                            <div>
+                                <h4 class="text-amber-500 font-bold uppercase tracking-widest text-[10px] mb-1">Behavioral Coaching</h4>
+                                <p class="text-gray-300 bg-[#121212] p-3 rounded border border-[#222] leading-relaxed">
+                                    <strong>Overcoming "Wallet Assuming":</strong> Underperformers often pre-judge what a customer can afford and decide not to pitch. Coach them that our job is to <em>offer solutions</em>, not manage the customer's budget. Roleplay the transition from discovery to recommendation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card p-6 border-t-2 border-amber-500 bg-[#0a0a0a]">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-2xl">✅</span>
+                            <h3 class="font-bold text-white text-lg tracking-wide uppercase">DCR (Completion)</h3>
+                        </div>
+                        <div class="space-y-4 text-sm">
+                            <div>
+                                <h4 class="text-amber-400 font-bold uppercase tracking-widest text-[10px] mb-1">Step-by-Step Execution</h4>
+                                <p class="text-gray-300 bg-[#121212] p-3 rounded border border-[#222] leading-relaxed">
+                                    <strong>Audit the Troubleshooting Tree:</strong> Are they utilizing the required support channels (internal chat/Tier 2) before calling a job a wash? Ensure they are exhausting the documented diagnostic tree before canceling a work order.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="text-amber-500 font-bold uppercase tracking-widest text-[10px] mb-1">Behavioral Coaching</h4>
+                                <p class="text-gray-300 bg-[#121212] p-3 rounded border border-[#222] leading-relaxed">
+                                    <strong>Building Technical Confidence:</strong> Low DCR often stems from a tech getting overwhelmed by complex setups (e.g., custom home theaters, complex wiring). Pair them with a senior tech for a complex job ride-along to build their confidence when the "easy fix" isn't available.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card p-6 border-t-2 border-red-500 bg-[#0a0a0a]">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-2xl">🔄</span>
+                            <h3 class="font-bold text-white text-lg tracking-wide uppercase">R12% (Quality / Rollbacks)</h3>
+                        </div>
+                        <div class="space-y-4 text-sm">
+                            <div>
+                                <h4 class="text-red-400 font-bold uppercase tracking-widest text-[10px] mb-1">Step-by-Step Execution</h4>
+                                <p class="text-gray-300 bg-[#121212] p-3 rounded border border-[#222] leading-relaxed">
+                                    <strong>Audit the Wrap-Up & QC:</strong> High R12 is almost always a failure to verify. Are they running the final signal tests? Are they physically showing the customer how to use the equipment and making them perform the action themselves before leaving?
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="text-amber-500 font-bold uppercase tracking-widest text-[10px] mb-1">Behavioral Coaching</h4>
+                                <p class="text-gray-300 bg-[#121212] p-3 rounded border border-[#222] leading-relaxed">
+                                    <strong>The "Rush to Finish" Mindset:</strong> R12 spikes when techs feel behind schedule and cut corners. Coach them that spending an extra 5 minutes on customer education today prevents a 2-hour rollback tomorrow. Slow down to speed up.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-12 border-t border-neutral-900 pt-8 pb-4 text-center text-xs text-dim">
+            FSM Leadership Dashboard V2.5 | Weekly Focus Automated Output
+        </div>
+    </div>
+
+    <script>
+        function sendEmail() {
+            const email = "ihsmgmtconcord@dish.com";
+            const subject = encodeURIComponent("Concord Office Weekly Focus - Rank 23");
+            const bodyText = document.getElementById('email-body-text').innerText;
+            const body = encodeURIComponent(bodyText);
+            const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+            window.open(gmailLink, '_blank');
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('nav button');
+            const contents = document.querySelectorAll('.tab-content');
+            
+            if(tabs.length === 0) console.warn("No tabs found. Check HTML structure.");
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetContentId = tab.id.replace('tab-', '') + '-content';
+                    
+                    tabs.forEach(t => {
+                        t.classList.remove('active-tab-style', 'text-black');
+                        t.classList.add('text-neutral-300');
+                        const iconSpan = t.querySelector('.tab-icon');
+                        if (iconSpan) {
+                            const iconSvg = iconSpan.querySelector('svg');
+                            if (iconSvg) { iconSvg.style.fill = ''; iconSvg.style.stroke = ''; }
+                        }
+                    });
+
+                    contents.forEach(content => {
+                        content.classList.add('hidden');
+                        content.classList.remove('block');
+                    });
+
+                    tab.classList.add('active-tab-style', 'text-black');
+                    tab.classList.remove('text-neutral-300');
+                    const activeIconSpan = tab.querySelector('.tab-icon');
+                    if (activeIconSpan) {
+                        const activeIconSvg = activeIconSpan.querySelector('svg');
+                        if (activeIconSvg) { activeIconSvg.style.fill = 'black'; activeIconSvg.style.stroke = 'black'; }
+                    }
+
+                    const targetContent = document.getElementById(targetContentId);
+                    if(targetContent) {
+                        targetContent.classList.remove('hidden');
+                        targetContent.classList.add('block');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
