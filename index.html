@@ -30,8 +30,8 @@
                 <div class="card px-4 py-2 text-dim flex items-center gap-2 border-amber-600/30 bg-amber-950/10">Rank: <span class="text-amber-500 font-bold">23</span></div>
                 <div class="card px-4 py-2 text-dim flex items-center gap-2">PPH: <span class="text-white font-bold">5.12</span></div>
                 <div class="card px-4 py-2 text-dim flex items-center gap-2">$/WO: <span class="text-white font-bold">$29.57</span></div>
-                <div class="card px-4 py-2 text-dim flex items-center gap-2">DCR: <span class="text-white font-bold">90.5%</span></div>
-                <div class="card px-4 py-2 text-dim flex items-center gap-2">R12%: <span class="text-white font-bold">4.4%</span></div>
+                <div class="card px-4 py-2 text-dim flex items-center gap-2">DCR: <span class="text-white font-bold">90.54%</span></div>
+                <div class="card px-4 py-2 text-dim flex items-center gap-2">R12%: <span class="text-white font-bold">4.39%</span></div>
             </div>
         </div>
         
@@ -40,6 +40,10 @@
                 <button id="tab-office-status" class="flex items-center space-x-2 px-4 py-2.5 rounded-md font-medium group text-neutral-300 transition-all duration-150 active-tab-style">
                     <span class="tab-icon group-hover:scale-105 transition-transform"><svg class="w-4 h-4 text-neutral-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></span>
                     <span class="group-hover:text-white transition-colors">Office Status</span>
+                </button>
+                <button id="tab-level-comp" class="flex items-center space-x-2 px-4 py-2.5 rounded-md font-medium group text-neutral-300 transition-all duration-150">
+                    <span class="tab-icon group-hover:scale-105 transition-transform"><svg class="w-4 h-4 text-neutral-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg></span>
+                    <span class="group-hover:text-white transition-colors">Level Comparison</span>
                 </button>
                 <button id="tab-outliers" class="flex items-center space-x-2 px-4 py-2.5 rounded-md font-medium group text-neutral-300 transition-all duration-150">
                     <span class="tab-icon group-hover:scale-105 transition-transform"><svg class="w-4 h-4 text-neutral-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg></span>
@@ -94,11 +98,11 @@
                                     </div>
                                     <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
                                         <span class="text-[10px] text-dim block mb-1 uppercase tracking-wider">DCR Leader</span>
-                                        <div class="flex justify-between items-center"><span class="font-bold text-gray-200 truncate pr-1">Gonzalez, Jeremy</span><span class="font-mono text-[11px] text-green-400">100%</span></div>
+                                        <div class="flex justify-between items-center"><span class="font-bold text-gray-200 truncate pr-1">Gonzalez, Jeremy</span><span class="font-mono text-[11px] text-green-400">100.0%</span></div>
                                     </div>
                                     <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
                                         <span class="text-[10px] text-dim block mb-1 uppercase tracking-wider">R12% Leader</span>
-                                        <div class="flex justify-between items-center"><span class="font-bold text-gray-200 truncate pr-1">Smith, Kaden M</span><span class="font-mono text-[11px] text-green-400">0.0%</span></div>
+                                        <div class="flex justify-between items-center"><span class="font-bold text-gray-200 truncate pr-1">Smith, Kaden M</span><span class="font-mono text-[11px] text-green-400">0.00%</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -110,16 +114,16 @@
                                         <div class="text-red-400 font-mono text-[11px] whitespace-nowrap">Goal: +1.46</div>
                                     </div>
                                     <div class="flex justify-between items-center bg-[#1a0505] p-2 rounded border border-[#330000]">
-                                        <div class="truncate pr-2 flex items-center gap-1"><span class="text-dim text-[10px] uppercase tracking-wider">$/WO:</span> <span class="text-gray-300 font-medium">Martineau, Justin</span> <span class="text-red-500 font-mono text-[10px]">($0.00)</span></div>
+                                        <div class="truncate pr-2 flex items-center gap-1"><span class="text-dim text-[10px] uppercase tracking-wider">$/WO:</span> <span class="text-gray-300 font-medium">Vodvarka, Ryan</span> <span class="text-red-500 font-mono text-[10px]">($0.00)</span></div>
                                         <div class="text-red-400 font-mono text-[11px] whitespace-nowrap">Goal: +$29.57</div>
                                     </div>
                                     <div class="flex justify-between items-center bg-[#1a0505] p-2 rounded border border-[#330000]">
-                                        <div class="truncate pr-2 flex items-center gap-1"><span class="text-dim text-[10px] uppercase tracking-wider">DCR:</span> <span class="text-gray-300 font-medium">Patten, Bradley</span> <span class="text-red-500 font-mono text-[10px]">(86.1%)</span></div>
-                                        <div class="text-red-400 font-mono text-[11px] whitespace-nowrap">Goal: +4.4%</div>
+                                        <div class="truncate pr-2 flex items-center gap-1"><span class="text-dim text-[10px] uppercase tracking-wider">DCR:</span> <span class="text-gray-300 font-medium">Vodvarka, Ryan</span> <span class="text-red-500 font-mono text-[10px]">(62.50%)</span></div>
+                                        <div class="text-red-400 font-mono text-[11px] whitespace-nowrap">Goal: +28.04%</div>
                                     </div>
                                     <div class="flex justify-between items-center bg-[#1a0505] p-2 rounded border border-[#330000]">
-                                        <div class="truncate pr-2 flex items-center gap-1"><span class="text-dim text-[10px] uppercase tracking-wider">R12%:</span> <span class="text-gray-300 font-medium">Gonzalez, Jeremy</span> <span class="text-red-500 font-mono text-[10px]">(14.8%)</span></div>
-                                        <div class="text-red-400 font-mono text-[11px] whitespace-nowrap">Goal: -10.4%</div>
+                                        <div class="truncate pr-2 flex items-center gap-1"><span class="text-dim text-[10px] uppercase tracking-wider">R12%:</span> <span class="text-gray-300 font-medium">Gonzalez, Jeremy</span> <span class="text-red-500 font-mono text-[10px]">(14.81%)</span></div>
+                                        <div class="text-red-400 font-mono text-[11px] whitespace-nowrap">Goal: -10.42%</div>
                                     </div>
                                 </div>
                             </div>
@@ -151,11 +155,11 @@
                                     </div>
                                     <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
                                         <span class="text-[10px] text-dim block mb-1 uppercase tracking-wider">DCR Leader</span>
-                                        <div class="flex justify-between items-center"><span class="font-bold text-gray-200 truncate pr-1">Thompson, Mark Allen</span><span class="font-mono text-[11px] text-green-400">100%</span></div>
+                                        <div class="flex justify-between items-center"><span class="font-bold text-gray-200 truncate pr-1">Thompson, Mark A</span><span class="font-mono text-[11px] text-green-400">100.0%</span></div>
                                     </div>
                                     <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
                                         <span class="text-[10px] text-dim block mb-1 uppercase tracking-wider">R12% Leader</span>
-                                        <div class="flex justify-between items-center"><span class="font-bold text-gray-200 truncate pr-1">Jean, Vokis</span><span class="font-mono text-[11px] text-green-400">0.0%</span></div>
+                                        <div class="flex justify-between items-center"><span class="font-bold text-gray-200 truncate pr-1">Jean, Vokis</span><span class="font-mono text-[11px] text-green-400">0.00%</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -167,16 +171,16 @@
                                         <div class="text-red-400 font-mono text-[11px] whitespace-nowrap">Goal: +1.92</div>
                                     </div>
                                     <div class="flex justify-between items-center bg-[#1a0505] p-2 rounded border border-[#330000]">
-                                        <div class="truncate pr-2 flex items-center gap-1"><span class="text-dim text-[10px] uppercase tracking-wider">$/WO:</span> <span class="text-gray-300 font-medium">Thompson, Mark Allen</span> <span class="text-red-500 font-mono text-[10px]">($15.26)</span></div>
+                                        <div class="truncate pr-2 flex items-center gap-1"><span class="text-dim text-[10px] uppercase tracking-wider">$/WO:</span> <span class="text-gray-300 font-medium">Thompson, Mark A</span> <span class="text-red-500 font-mono text-[10px]">($15.26)</span></div>
                                         <div class="text-red-400 font-mono text-[11px] whitespace-nowrap">Goal: +$14.31</div>
                                     </div>
                                     <div class="flex justify-between items-center bg-[#1a0505] p-2 rounded border border-[#330000]">
-                                        <div class="truncate pr-2 flex items-center gap-1"><span class="text-dim text-[10px] uppercase tracking-wider">DCR:</span> <span class="text-gray-300 font-medium">Tolan, Kevin S</span> <span class="text-red-500 font-mono text-[10px]">(76.2%)</span></div>
-                                        <div class="text-red-400 font-mono text-[11px] whitespace-nowrap">Goal: +14.3%</div>
+                                        <div class="truncate pr-2 flex items-center gap-1"><span class="text-dim text-[10px] uppercase tracking-wider">DCR:</span> <span class="text-gray-300 font-medium">Tolan, Kevin S</span> <span class="text-red-500 font-mono text-[10px]">(76.19%)</span></div>
+                                        <div class="text-red-400 font-mono text-[11px] whitespace-nowrap">Goal: +14.35%</div>
                                     </div>
                                     <div class="flex justify-between items-center bg-[#1a0505] p-2 rounded border border-[#330000]">
-                                        <div class="truncate pr-2 flex items-center gap-1"><span class="text-dim text-[10px] uppercase tracking-wider">R12%:</span> <span class="text-gray-300 font-medium">Tolan, Kevin S</span> <span class="text-red-500 font-mono text-[10px]">(18.8%)</span></div>
-                                        <div class="text-red-400 font-mono text-[11px] whitespace-nowrap">Goal: -14.4%</div>
+                                        <div class="truncate pr-2 flex items-center gap-1"><span class="text-dim text-[10px] uppercase tracking-wider">R12%:</span> <span class="text-gray-300 font-medium">Tolan, Kevin S</span> <span class="text-red-500 font-mono text-[10px]">(18.75%)</span></div>
+                                        <div class="text-red-400 font-mono text-[11px] whitespace-nowrap">Goal: -14.36%</div>
                                     </div>
                                 </div>
                             </div>
@@ -186,6 +190,167 @@
                 </div>
             </div>
             
+            <div id="level-comp-content" class="tab-content hidden space-y-6">
+                <div class="card p-6">
+                    <h3 class="text-lg font-bold text-white mb-4">Technician Performance vs. Level Averages</h3>
+                    <p class="text-xs text-gray-400 mb-4">Compare individual technician execution directly against the baseline average for their assigned tier level. Positive gaps are marked in green, highlighting performance above their peer group.</p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm text-dim">
+                            <thead class="text-xs uppercase bg-[#1a1a1a] text-white">
+                                <tr>
+                                    <th class="p-3">Technician</th>
+                                    <th class="p-3">Level</th>
+                                    <th class="p-3">PPH (vs Level)</th>
+                                    <th class="p-3">$/WO (vs Level)</th>
+                                    <th class="p-3">DCR (vs Office)</th>
+                                    <th class="p-3">R12% (vs Level)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-neutral-800">
+                                
+                                <tr>
+                                    <td class="p-3 font-bold text-white">Bianco, Robert M</td>
+                                    <td class="p-3 text-amber-500">DISH Tech 4</td>
+                                    <td class="p-3 font-mono">7.02 <span class="text-green-400 text-[10px] ml-1">(+0.92)</span></td>
+                                    <td class="p-3 font-mono">$29.81 <span class="text-red-400 text-[10px] ml-1">(-$7.25)</span></td>
+                                    <td class="p-3 font-mono">94.44% <span class="text-green-400 text-[10px] ml-1">(+3.90%)</span></td>
+                                    <td class="p-3 font-mono">2.94% <span class="text-amber-500 text-[10px] ml-1">(0.00%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-white">Bosch, Micah</td>
+                                    <td class="p-3 text-amber-500">DISH Tech 1</td>
+                                    <td class="p-3 font-mono">4.40 <span class="text-red-400 text-[10px] ml-1">(-0.82)</span></td>
+                                    <td class="p-3 font-mono">$18.07 <span class="text-red-400 text-[10px] ml-1">(-$7.99)</span></td>
+                                    <td class="p-3 font-mono">90.47% <span class="text-red-400 text-[10px] ml-1">(-0.07%)</span></td>
+                                    <td class="p-3 font-mono">10.53% <span class="text-red-400 text-[10px] ml-1">(+5.93%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-white">Dorward, Bryan</td>
+                                    <td class="p-3 text-amber-500">DISH Tech 1</td>
+                                    <td class="p-3 font-mono">3.66 <span class="text-red-400 text-[10px] ml-1">(-1.56)</span></td>
+                                    <td class="p-3 font-mono">$20.76 <span class="text-red-400 text-[10px] ml-1">(-$5.30)</span></td>
+                                    <td class="p-3 font-mono">88.00% <span class="text-red-400 text-[10px] ml-1">(-2.54%)</span></td>
+                                    <td class="p-3 font-mono">0.00% <span class="text-green-400 text-[10px] ml-1">(-4.60%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-white">Gonzalez, Jeremy</td>
+                                    <td class="p-3 text-amber-500">DISH Tech 1</td>
+                                    <td class="p-3 font-mono">4.50 <span class="text-red-400 text-[10px] ml-1">(-0.72)</span></td>
+                                    <td class="p-3 font-mono">$16.19 <span class="text-red-400 text-[10px] ml-1">(-$9.87)</span></td>
+                                    <td class="p-3 font-mono">100.00% <span class="text-green-400 text-[10px] ml-1">(+9.46%)</span></td>
+                                    <td class="p-3 font-mono">14.81% <span class="text-red-400 text-[10px] ml-1">(+10.21%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-white">Mallette, Nicole</td>
+                                    <td class="p-3 text-amber-500">DISH Tech 1</td>
+                                    <td class="p-3 font-mono">3.98 <span class="text-red-400 text-[10px] ml-1">(-1.24)</span></td>
+                                    <td class="p-3 font-mono">$47.13 <span class="text-green-400 text-[10px] ml-1">(+$21.07)</span></td>
+                                    <td class="p-3 font-mono">86.66% <span class="text-red-400 text-[10px] ml-1">(-3.88%)</span></td>
+                                    <td class="p-3 font-mono">0.00% <span class="text-green-400 text-[10px] ml-1">(-4.60%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-white">Martineau, Justin</td>
+                                    <td class="p-3 text-amber-500">DISH Tech 1</td>
+                                    <td class="p-3 font-mono">4.33 <span class="text-red-400 text-[10px] ml-1">(-0.89)</span></td>
+                                    <td class="p-3 font-mono">$0.00 <span class="text-red-400 text-[10px] ml-1">(-$26.06)</span></td>
+                                    <td class="p-3 font-mono">88.88% <span class="text-red-400 text-[10px] ml-1">(-1.66%)</span></td>
+                                    <td class="p-3 font-mono">0.00% <span class="text-green-400 text-[10px] ml-1">(-4.60%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-white">Patten, Bradley</td>
+                                    <td class="p-3 text-amber-500">DISH Tech 1</td>
+                                    <td class="p-3 font-mono">6.42 <span class="text-green-400 text-[10px] ml-1">(+1.20)</span></td>
+                                    <td class="p-3 font-mono">$31.59 <span class="text-green-400 text-[10px] ml-1">(+$5.53)</span></td>
+                                    <td class="p-3 font-mono">86.11% <span class="text-red-400 text-[10px] ml-1">(-4.43%)</span></td>
+                                    <td class="p-3 font-mono">9.68% <span class="text-red-400 text-[10px] ml-1">(+5.08%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-white">Smith, Kaden M</td>
+                                    <td class="p-3 text-amber-500">DISH Tech 4</td>
+                                    <td class="p-3 font-mono">5.90 <span class="text-red-400 text-[10px] ml-1">(-0.20)</span></td>
+                                    <td class="p-3 font-mono">$57.36 <span class="text-green-400 text-[10px] ml-1">(+$20.30)</span></td>
+                                    <td class="p-3 font-mono">86.66% <span class="text-red-400 text-[10px] ml-1">(-3.88%)</span></td>
+                                    <td class="p-3 font-mono">0.00% <span class="text-green-400 text-[10px] ml-1">(-2.94%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-white">Vodvarka, Ryan</td>
+                                    <td class="p-3 text-amber-500">DISH Tech 1</td>
+                                    <td class="p-3 font-mono">4.33 <span class="text-red-400 text-[10px] ml-1">(-0.89)</span></td>
+                                    <td class="p-3 font-mono">$0.00 <span class="text-red-400 text-[10px] ml-1">(-$26.06)</span></td>
+                                    <td class="p-3 font-mono">62.50% <span class="text-red-400 text-[10px] ml-1">(-28.04%)</span></td>
+                                    <td class="p-3 font-mono">0.00% <span class="text-green-400 text-[10px] ml-1">(-4.60%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-white">Babcock, James V</td>
+                                    <td class="p-3 text-amber-500">DISH Tech 4</td>
+                                    <td class="p-3 font-mono">6.79 <span class="text-green-400 text-[10px] ml-1">(+0.69)</span></td>
+                                    <td class="p-3 font-mono">$38.70 <span class="text-green-400 text-[10px] ml-1">(+$1.64)</span></td>
+                                    <td class="p-3 font-mono">97.14% <span class="text-green-400 text-[10px] ml-1">(+6.60%)</span></td>
+                                    <td class="p-3 font-mono">8.82% <span class="text-red-400 text-[10px] ml-1">(+5.88%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-white">deLancey, Isiah D</td>
+                                    <td class="p-3 text-amber-500">DISH Tech 1</td>
+                                    <td class="p-3 font-mono">5.88 <span class="text-green-400 text-[10px] ml-1">(+0.66)</span></td>
+                                    <td class="p-3 font-mono">$29.47 <span class="text-green-400 text-[10px] ml-1">(+$3.41)</span></td>
+                                    <td class="p-3 font-mono">91.17% <span class="text-green-400 text-[10px] ml-1">(+0.63%)</span></td>
+                                    <td class="p-3 font-mono">0.00% <span class="text-green-400 text-[10px] ml-1">(-4.60%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-white">Jean, Vokis</td>
+                                    <td class="p-3 text-amber-500">DISH Tech 2</td>
+                                    <td class="p-3 font-mono">5.92 <span class="text-green-400 text-[10px] ml-1">(+0.32)</span></td>
+                                    <td class="p-3 font-mono">$34.32 <span class="text-green-400 text-[10px] ml-1">(+$4.18)</span></td>
+                                    <td class="p-3 font-mono">94.28% <span class="text-green-400 text-[10px] ml-1">(+3.74%)</span></td>
+                                    <td class="p-3 font-mono">0.00% <span class="text-green-400 text-[10px] ml-1">(-3.78%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-white">Parton, Cory</td>
+                                    <td class="p-3 text-amber-500">DISH Tech 2</td>
+                                    <td class="p-3 font-mono">5.63 <span class="text-green-400 text-[10px] ml-1">(+0.03)</span></td>
+                                    <td class="p-3 font-mono">$46.33 <span class="text-green-400 text-[10px] ml-1">(+$16.19)</span></td>
+                                    <td class="p-3 font-mono">93.33% <span class="text-green-400 text-[10px] ml-1">(+2.79%)</span></td>
+                                    <td class="p-3 font-mono">7.14% <span class="text-red-400 text-[10px] ml-1">(+3.36%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-white">Ross, Justin</td>
+                                    <td class="p-3 text-amber-500">DISH Tech 1</td>
+                                    <td class="p-3 font-mono">3.20 <span class="text-red-400 text-[10px] ml-1">(-2.02)</span></td>
+                                    <td class="p-3 font-mono">$24.28 <span class="text-red-400 text-[10px] ml-1">(-$1.78)</span></td>
+                                    <td class="p-3 font-mono">89.47% <span class="text-red-400 text-[10px] ml-1">(-1.07%)</span></td>
+                                    <td class="p-3 font-mono">0.00% <span class="text-green-400 text-[10px] ml-1">(-4.60%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-white">Thompson, Mark Allen</td>
+                                    <td class="p-3 text-amber-500">DISH Tech 1</td>
+                                    <td class="p-3 font-mono">4.72 <span class="text-red-400 text-[10px] ml-1">(-0.50)</span></td>
+                                    <td class="p-3 font-mono">$15.26 <span class="text-red-400 text-[10px] ml-1">(-$10.80)</span></td>
+                                    <td class="p-3 font-mono">100.00% <span class="text-green-400 text-[10px] ml-1">(+9.46%)</span></td>
+                                    <td class="p-3 font-mono">0.00% <span class="text-green-400 text-[10px] ml-1">(-4.60%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-white">Tolan, Kevin S</td>
+                                    <td class="p-3 text-amber-500">DISH Tech 1</td>
+                                    <td class="p-3 font-mono">4.34 <span class="text-red-400 text-[10px] ml-1">(-0.88)</span></td>
+                                    <td class="p-3 font-mono">$17.50 <span class="text-red-400 text-[10px] ml-1">(-$8.56)</span></td>
+                                    <td class="p-3 font-mono">76.19% <span class="text-red-400 text-[10px] ml-1">(-14.35%)</span></td>
+                                    <td class="p-3 font-mono">18.75% <span class="text-red-400 text-[10px] ml-1">(+14.15%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-white">Yeaw, Cody R</td>
+                                    <td class="p-3 text-amber-500">DISH Tech 1</td>
+                                    <td class="p-3 font-mono">5.39 <span class="text-green-400 text-[10px] ml-1">(+0.17)</span></td>
+                                    <td class="p-3 font-mono">$35.26 <span class="text-green-400 text-[10px] ml-1">(+$9.20)</span></td>
+                                    <td class="p-3 font-mono">96.00% <span class="text-green-400 text-[10px] ml-1">(+5.46%)</span></td>
+                                    <td class="p-3 font-mono">0.00% <span class="text-green-400 text-[10px] ml-1">(-4.60%)</span></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
             <div id="outliers-content" class="tab-content hidden space-y-6">
                 <div class="card p-6">
                     <h3 class="text-lg font-bold text-white mb-4">Critical Coaching Targets & Improvement Goals (By FSM)</h3>
@@ -211,24 +376,24 @@
                                 </tr>
                                 <tr>
                                     <td class="p-3 font-bold text-white">Scott Tuman</td>
-                                    <td class="p-3 text-red-400">Martineau, Justin</td>
+                                    <td class="p-3 text-red-400">Vodvarka, Ryan</td>
                                     <td class="p-3">$/WO</td>
                                     <td class="p-3 font-mono">$0.00</td>
                                     <td class="p-3 font-bold text-amber-500">+$29.57</td>
                                 </tr>
                                 <tr>
                                     <td class="p-3 font-bold text-white">Scott Tuman</td>
-                                    <td class="p-3 text-red-400">Patten, Bradley</td>
+                                    <td class="p-3 text-red-400">Vodvarka, Ryan</td>
                                     <td class="p-3">DCR</td>
-                                    <td class="p-3 font-mono">86.1%</td>
-                                    <td class="p-3 font-bold text-amber-500">+4.4%</td>
+                                    <td class="p-3 font-mono">62.50%</td>
+                                    <td class="p-3 font-bold text-amber-500">+28.04%</td>
                                 </tr>
                                 <tr>
                                     <td class="p-3 font-bold text-white">Scott Tuman</td>
                                     <td class="p-3 text-red-400">Gonzalez, Jeremy</td>
                                     <td class="p-3">R12%</td>
-                                    <td class="p-3 font-mono">14.8%</td>
-                                    <td class="p-3 font-bold text-amber-500">-10.4%</td>
+                                    <td class="p-3 font-mono">14.81%</td>
+                                    <td class="p-3 font-bold text-amber-500">-10.42%</td>
                                 </tr>
                                 <tr>
                                     <td class="p-3 font-bold text-white">Tom Coates</td>
@@ -248,15 +413,15 @@
                                     <td class="p-3 font-bold text-white">Tom Coates</td>
                                     <td class="p-3 text-red-400">Tolan, Kevin S</td>
                                     <td class="p-3">DCR</td>
-                                    <td class="p-3 font-mono">76.2%</td>
-                                    <td class="p-3 font-bold text-amber-500">+14.3%</td>
+                                    <td class="p-3 font-mono">76.19%</td>
+                                    <td class="p-3 font-bold text-amber-500">+14.35%</td>
                                 </tr>
                                 <tr>
                                     <td class="p-3 font-bold text-white">Tom Coates</td>
                                     <td class="p-3 text-red-400">Tolan, Kevin S</td>
                                     <td class="p-3">R12%</td>
-                                    <td class="p-3 font-mono">18.8%</td>
-                                    <td class="p-3 font-bold text-amber-500">-14.4%</td>
+                                    <td class="p-3 font-mono">18.75%</td>
+                                    <td class="p-3 font-bold text-amber-500">-14.36%</td>
                                 </tr>
 
                             </tbody>
@@ -276,37 +441,71 @@
                         </button>
                     </div>
                 </div>
-                <div id="email-body-html" class="bg-[#161616] border border-neutral-800 p-6 rounded-md text-sm whitespace-pre-wrap text-gray-300 font-sans shadow-inner overflow-y-auto max-h-[600px]"><b>Concord FSMs,</b><br><br>Here is the MTD Focus breakdown for Rank 23.<br><br><b>Scott Tuman's Team Highlights & Targets:</b><br>- <b>Shoutout:</b> Bianco, Robert M for Top Overall Performance.<br>- <b>PPH Target:</b> Dorward, Bryan (Currently 3.66). Needs +1.46 to hit office average.<br>- <b>$/WO Target:</b> Martineau, Justin (Currently $0.00). Needs +$29.57 to hit office average.<br>- <b>DCR Target:</b> Patten, Bradley (Currently 86.1%). Needs +4.4% to hit office average.<br>- <b>R12% Target:</b> Gonzalez, Jeremy (Currently 14.8%). Needs -10.4% to hit office average.<br><br><b>Tom Coates's Team Highlights & Targets:</b><br>- <b>Shoutout:</b> Jean, Vokis for Top Overall Performance.<br>- <b>PPH Target:</b> Ross, Justin (Currently 3.20). Needs +1.92 to hit office average.<br>- <b>$/WO Target:</b> Thompson, Mark Allen (Currently $15.26). Needs +$14.31 to hit office average.<br>- <b>DCR Target:</b> Tolan, Kevin S (Currently 76.2%). Needs +14.3% to hit office average.<br>- <b>R12% Target:</b> Tolan, Kevin S (Currently 18.8%). Needs -14.4% to hit office average.<br><br>View the full dashboard here:<br><a href="https://briannebesnak-nebs.github.io/MTD-Coaching/" style="color:#f59e0b;">https://briannebesnak-nebs.github.io/MTD-Coaching/</a><br><br>Let's close the gaps.<br><b>MTD Focus</b></div>
-                <div id="email-body-text" class="hidden">Concord FSMs,
+                <div id="email-body-html" class="bg-[#161616] border border-neutral-800 p-6 rounded-md text-sm whitespace-pre-wrap text-gray-300 font-sans shadow-inner overflow-y-auto max-h-[600px]">Subject: Action Required: Concord FSM MTD Field Focus & Dashboard Output
 
-Here is the MTD Focus breakdown for Rank 23.
+Team,
 
-Scott Tuman's Team Highlights & Targets:
-- Shoutout: Bianco, Robert M for Top Overall Performance.
-- PPH Target: Dorward, Bryan (Currently 3.66). Needs +1.46 to hit office average.
-- $/WO Target: Martineau, Justin (Currently $0.00). Needs +$29.57 to hit office average.
-- DCR Target: Patten, Bradley (Currently 86.1%). Needs +4.4% to hit office average.
-- R12% Target: Gonzalez, Jeremy (Currently 14.8%). Needs -10.4% to hit office average.
+Here is your automated MTD Field Focus breakdown. To elevate our Concord office rank of 23, we need to immediately address the isolated metric drags across our respective teams.
 
-Tom Coates's Team Highlights & Targets:
-- Shoutout: Jean, Vokis for Top Overall Performance.
-- PPH Target: Ross, Justin (Currently 3.20). Needs +1.92 to hit office average.
-- $/WO Target: Thompson, Mark Allen (Currently $15.26). Needs +$14.31 to hit office average.
-- DCR Target: Tolan, Kevin S (Currently 76.2%). Needs +14.3% to hit office average.
-- R12% Target: Tolan, Kevin S (Currently 18.8%). Needs -14.4% to hit office average.
-
-View the full dashboard here:
+Access the full Interactive Leadership Dashboard here:
 https://briannebesnak-nebs.github.io/MTD-Coaching/
 
-Let's close the gaps.
-MTD Focus</div>
+SCOTT TUMAN (Bigfoot's Brawlers)
+Top Performer Shoutout: Bianco, Robert M (PPH: 7.02, $/WO: $29.81, DCR: 94.44%, R12: 2.94%)
+Weekly Coaching Targets (To Baseline):
+• PPH: Dorward, Bryan (+1.46 Goal)
+• $/WO: Vodvarka, Ryan (+$29.57 Goal)
+• DCR: Vodvarka, Ryan (+28.04% Goal)
+• R12%: Gonzalez, Jeremy (-10.42% Goal)
+
+TOM COATES (Tomcats)
+Top Performer Shoutout: Jean, Vokis (PPH: 5.92, $/WO: $34.32, DCR: 94.28%, R12: 0.00%)
+Weekly Coaching Targets (To Baseline):
+• PPH: Ross, Justin (+1.92 Goal)
+• $/WO: Thompson, Mark Allen (+$14.31 Goal)
+• DCR: Tolan, Kevin S (+14.35% Goal)
+• R12%: Tolan, Kevin S (-14.36% Goal)
+
+Please sync with the targeted technicians on your 1-on-1s and ride-alongs this week.
+
+Best,
+MTD Focus Analyst</div>
+                <div id="email-body-text" class="hidden">Subject: Action Required: Concord FSM MTD Field Focus & Dashboard Output
+
+Team,
+
+Here is your automated MTD Field Focus breakdown. To elevate our Concord office rank of 23, we need to immediately address the isolated metric drags across our respective teams.
+
+Access the full Interactive Leadership Dashboard here:
+https://briannebesnak-nebs.github.io/MTD-Coaching/
+
+SCOTT TUMAN (Bigfoot's Brawlers)
+Top Performer Shoutout: Bianco, Robert M (PPH: 7.02, $/WO: $29.81, DCR: 94.44%, R12: 2.94%)
+Weekly Coaching Targets (To Baseline):
+• PPH: Dorward, Bryan (+1.46 Goal)
+• $/WO: Vodvarka, Ryan (+$29.57 Goal)
+• DCR: Vodvarka, Ryan (+28.04% Goal)
+• R12%: Gonzalez, Jeremy (-10.42% Goal)
+
+TOM COATES (Tomcats)
+Top Performer Shoutout: Jean, Vokis (PPH: 5.92, $/WO: $34.32, DCR: 94.28%, R12: 0.00%)
+Weekly Coaching Targets (To Baseline):
+• PPH: Ross, Justin (+1.92 Goal)
+• $/WO: Thompson, Mark Allen (+$14.31 Goal)
+• DCR: Tolan, Kevin S (+14.35% Goal)
+• R12%: Tolan, Kevin S (-14.36% Goal)
+
+Please sync with the targeted technicians on your 1-on-1s and ride-alongs this week.
+
+Best,
+MTD Focus Analyst</div>
             </div>
 
             <div id="playbook-content" class="tab-content hidden space-y-6"></div>
         </div>
         
         <div class="mt-12 border-t border-neutral-900 pt-8 pb-4 text-center text-xs text-dim">
-            FSM Leadership Dashboard V2.8 | Weekly Focus Automated Output
+            FSM Leadership Dashboard V3.0 | Weekly Focus Automated Output
         </div>
     </div>
 
@@ -388,7 +587,7 @@ MTD Focus</div>
 
         function sendEmail() {
             const email = "ihsmgmtconcord@dish.com";
-            const subject = encodeURIComponent("Concord Office Weekly FSM Focus - Rank 23");
+            const subject = encodeURIComponent("Action Required: Concord FSM MTD Field Focus & Dashboard Output");
             const bodyText = document.getElementById('email-body-text').innerText;
             const body = encodeURIComponent(bodyText);
             const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
