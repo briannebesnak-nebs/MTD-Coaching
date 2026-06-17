@@ -12,7 +12,6 @@
     .red-bg { background-color: #cc0000; }
     .red-border { border-color: #cc0000; }
     .text-dim { color: #9ca3af; }
-    .drag-box { background-color: #1a1a1a; border: 1px solid #333; border-radius: 0.375rem; padding: 0.5rem; display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;}
     .active-tab-style { background-color: #f59e0b; color: black !important; }
     .active-tab-style .tab-icon svg { fill: black !important; stroke: black !important; }
     .tab-content.hidden { display: none; }
@@ -68,293 +67,58 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mb-8">
-                    <div class="card p-0 overflow-hidden">
-                        <div class="p-4 border-b border-[#2a2a2a] flex items-center justify-between bg-[#161616]">
-                            <div class="flex items-center space-x-2">
-                                <span class="text-yellow-500 text-lg">🏆</span>
-                                <h3 class="font-bold text-white uppercase tracking-wider text-sm">Scott Tuman Team Leaders</h3>
-                            </div>
-                        </div>
-                        <div class="p-4 space-y-3">
-                            <div class="bg-[#1a1a1a] p-3 rounded flex justify-between items-center border border-[#333]">
-                                <div class="text-xs text-dim">Overall #1</div>
-                                <div class="font-bold text-yellow-400">Bianco, Robert M</div>
-                            </div>
-                            <div class="grid grid-cols-2 gap-2 text-xs">
-                                <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
-                                    <span class="text-dim block mb-1">PPH Leader</span>
-                                    <span class="font-bold text-white">Bianco, Robert M</span>
-                                </div>
-                                <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
-                                    <span class="text-dim block mb-1">$/WO Leader</span>
-                                    <span class="font-bold text-white">Smith, Kaden M</span>
-                                </div>
-                                <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
-                                    <span class="text-dim block mb-1">DCR Leader</span>
-                                    <span class="font-bold text-white">Gonzalez, Jeremy</span>
-                                </div>
-                                <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
-                                    <span class="text-dim block mb-1">R12% Leader</span>
-                                    <span class="font-bold text-white">Smith, Kaden M</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-8">
                     
-                    <div class="card p-0 overflow-hidden">
-                        <div class="p-4 border-b border-[#2a2a2a] flex items-center justify-between bg-[#161616]">
+                    <div class="card p-0 flex flex-col h-full border border-neutral-800 overflow-hidden">
+                        <div class="p-4 border-b border-[#2a2a2a] flex items-center justify-between bg-gradient-to-r from-[#1a1a1a] to-[#121212]">
                             <div class="flex items-center space-x-2">
-                                <span class="text-yellow-500 text-lg">🏆</span>
-                                <h3 class="font-bold text-white uppercase tracking-wider text-sm">Tom Coates Team Leaders</h3>
+                                <span class="text-amber-500 text-lg">📊</span>
+                                <h3 class="font-bold text-white uppercase tracking-wider text-sm">Scott Tuman Team Overview</h3>
                             </div>
                         </div>
-                        <div class="p-4 space-y-3">
-                            <div class="bg-[#1a1a1a] p-3 rounded flex justify-between items-center border border-[#333]">
-                                <div class="text-xs text-dim">Overall #1</div>
-                                <div class="font-bold text-yellow-400">Babcock, James V</div>
+                        
+                        <div class="flex flex-col lg:flex-row flex-grow">
+                            <div class="p-5 border-b lg:border-b-0 lg:border-r border-[#222] w-full lg:w-1/2">
+                                <h4 class="text-[10px] text-dim uppercase tracking-widest mb-3 font-bold">Top Performers</h4>
+                                <div class="bg-[#1a1a1a] p-3 rounded flex justify-between items-center border border-[#333] mb-3">
+                                    <div class="text-xs text-dim">Overall #1</div>
+                                    <div class="font-bold text-amber-400 text-sm">Smith, Kaden M</div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-2 text-xs">
+                                    <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
+                                        <span class="text-[10px] text-dim block mb-1 uppercase tracking-wider">PPH Leader</span>
+                                        <span class="font-bold text-gray-200">Bianco, Robert M</span>
+                                    </div>
+                                    <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
+                                        <span class="text-[10px] text-dim block mb-1 uppercase tracking-wider">$/WO Leader</span>
+                                        <span class="font-bold text-gray-200">Smith, Kaden M</span>
+                                    </div>
+                                    <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
+                                        <span class="text-[10px] text-dim block mb-1 uppercase tracking-wider">DCR Leader</span>
+                                        <span class="font-bold text-gray-200">Gonzalez, Jeremy</span>
+                                    </div>
+                                    <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
+                                        <span class="text-[10px] text-dim block mb-1 uppercase tracking-wider">R12% Leader</span>
+                                        <span class="font-bold text-gray-200">Smith, Kaden M</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="grid grid-cols-2 gap-2 text-xs">
-                                <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
-                                    <span class="text-dim block mb-1">PPH Leader</span>
-                                    <span class="font-bold text-white">Babcock, James V</span>
-                                </div>
-                                <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
-                                    <span class="text-dim block mb-1">$/WO Leader</span>
-                                    <span class="font-bold text-white">Parton, Cory</span>
-                                </div>
-                                <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
-                                    <span class="text-dim block mb-1">DCR Leader</span>
-                                    <span class="font-bold text-white">Thompson, Mark Allen</span>
-                                </div>
-                                <div class="bg-[#1a1a1a] p-2 rounded border border-[#222]">
-                                    <span class="text-dim block mb-1">R12% Leader</span>
-                                    <span class="font-bold text-white">Jean, Vokis</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="outliers-content" class="tab-content hidden space-y-6">
-                <div class="card p-6">
-                    <h3 class="text-lg font-bold text-white mb-4">Critical Coaching Targets & Improvement Goals (By FSM)</h3>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left text-sm text-dim">
-                            <thead class="text-xs uppercase bg-[#1a1a1a] text-white">
-                                <tr>
-                                    <th class="p-3">FSM Team</th>
-                                    <th class="p-3">Technician</th>
-                                    <th class="p-3">Primary Drag Metric</th>
-                                    <th class="p-3">Current MTD</th>
-                                    <th class="p-3">Improvement Goal (To Office Avg)</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-neutral-800">
-                                <tr>
-                                    <td class="p-3 font-bold text-white">Scott Tuman</td>
-                                    <td class="p-3 text-red-400">Dorward, Bryan</td>
-                                    <td class="p-3">PPH</td>
-                                    <td class="p-3 font-mono">3.62</td>
-                                    <td class="p-3 font-bold text-amber-500">+1.48</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-3 font-bold text-white">Scott Tuman</td>
-                                    <td class="p-3 text-red-400">Martineau, Justin</td>
-                                    <td class="p-3">$/WO</td>
-                                    <td class="p-3 font-mono">$0.00</td>
-                                    <td class="p-3 font-bold text-amber-500">+$29.57</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-3 font-bold text-white">Scott Tuman</td>
-                                    <td class="p-3 text-red-400">Patten, Bradley</td>
-                                    <td class="p-3">DCR</td>
-                                    <td class="p-3 font-mono">84.37%</td>
-                                    <td class="p-3 font-bold text-amber-500">+7.11%</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-3 font-bold text-white">Scott Tuman</td>
-                                    <td class="p-3 text-red-400">Gonzalez, Jeremy</td>
-                                    <td class="p-3">R12%</td>
-                                    <td class="p-3 font-mono">12.50%</td>
-                                    <td class="p-3 font-bold text-amber-500">-7.84%</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-3 font-bold text-white">Tom Coates</td>
-                                    <td class="p-3 text-red-400">Ross, Justin</td>
-                                    <td class="p-3">PPH</td>
-                                    <td class="p-3 font-mono">3.20</td>
-                                    <td class="p-3 font-bold text-amber-500">+1.90</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-3 font-bold text-white">Tom Coates</td>
-                                    <td class="p-3 text-red-400">Thompson, Mark Allen</td>
-                                    <td class="p-3">$/WO</td>
-                                    <td class="p-3 font-mono">$15.26</td>
-                                    <td class="p-3 font-bold text-amber-500">+$14.31</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-3 font-bold text-white">Tom Coates</td>
-                                    <td class="p-3 text-red-400">Tolan, Kevin S</td>
-                                    <td class="p-3">DCR</td>
-                                    <td class="p-3 font-mono">76.19%</td>
-                                    <td class="p-3 font-bold text-amber-500">+15.29%</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-3 font-bold text-white">Tom Coates</td>
-                                    <td class="p-3 text-red-400">Tolan, Kevin S</td>
-                                    <td class="p-3">R12%</td>
-                                    <td class="p-3 font-mono">18.75%</td>
-                                    <td class="p-3 font-bold text-amber-500">-14.09%</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <div id="email-content" class="tab-content hidden card p-6">
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
-                    <h3 class="text-lg font-bold text-white">Automated FSM Weekly Focus Email</h3>
-                    <div class="flex gap-2">
-                        <button onclick="navigator.clipboard.writeText(document.getElementById('email-body-text').innerText); alert('Copied to clipboard!')" class="bg-neutral-700 hover:bg-neutral-600 text-white text-xs font-bold px-4 py-2 rounded transition-colors">Copy Text</button>
-                        <button onclick="sendEmail()" class="bg-amber-500 hover:bg-amber-600 text-black text-xs font-bold px-4 py-2 rounded flex items-center gap-2 shadow-[0_0_10px_rgba(245,158,11,0.3)] transition-colors">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            Send via Gmail
-                        </button>
-                    </div>
-                </div>
-                <div id="email-body-html" class="bg-[#161616] border border-neutral-800 p-6 rounded-md text-sm whitespace-pre-wrap text-gray-300 font-sans shadow-inner">
-Subject: Concord FSM Weekly Field Focus - Target Areas
-
-Hi Team,
-
-To keep our office pushing upward, this Weekly Field Focus requires your high-leverage weekly planning, targeted routing, and closing the gap on office baselines. Let's start with celebrating the leaders setting the pace, and lock in on the specific techs who need your guidance to meet our office standard.
-
-Please leverage our primary coaching toolkit here:
-https://briannebesnak-nebs.github.io/MTD-Coaching/
-
-Scott Tuman - Team Focus
-Top Performer: Bianco, Robert M (Stellar work on PPH!)
-Targets/Improvement Goals:
-- Dorward, Bryan (PPH): Current 3.62 | Goal: +1.48
-- Martineau, Justin ($/WO): Current $0.00 | Goal: +$29.57
-- Patten, Bradley (DCR): Current 84.37% | Goal: +7.11%
-- Gonzalez, Jeremy (R12%): Current 12.50% | Goal: -7.84%
-
-Tom Coates - Team Focus
-Top Performer: Babcock, James V (Great overall leadership and PPH!)
-Targets/Improvement Goals:
-- Ross, Justin (PPH): Current 3.20 | Goal: +1.90
-- Thompson, Mark Allen ($/WO): Current $15.26 | Goal: +$14.31
-- Tolan, Kevin S (DCR): Current 76.19% | Goal: +15.29%
-- Tolan, Kevin S (R12%): Current 18.75% | Goal: -14.09%
-
-Let's focus our routing and ride-alongs on closing these exact gaps. Let me know how I can support you this week!
-
-Best,
-MTD Focus
-                </div>
-                <div id="email-body-text" class="hidden">
-Subject: Concord FSM Weekly Field Focus - Target Areas
-
-Hi Team,
-
-To keep our office pushing upward, this Weekly Field Focus requires your high-leverage weekly planning, targeted routing, and closing the gap on office baselines. Let's start with celebrating the leaders setting the pace, and lock in on the specific techs who need your guidance to meet our office standard.
-
-Please leverage our primary coaching toolkit here:
-https://briannebesnak-nebs.github.io/MTD-Coaching/
-
-Scott Tuman - Team Focus
-Top Performer: Bianco, Robert M (Stellar work on PPH!)
-Targets/Improvement Goals:
-- Dorward, Bryan (PPH): Current 3.62 | Goal: +1.48
-- Martineau, Justin ($/WO): Current $0.00 | Goal: +$29.57
-- Patten, Bradley (DCR): Current 84.37% | Goal: +7.11%
-- Gonzalez, Jeremy (R12%): Current 12.50% | Goal: -7.84%
-
-Tom Coates - Team Focus
-Top Performer: Babcock, James V (Great overall leadership and PPH!)
-Targets/Improvement Goals:
-- Ross, Justin (PPH): Current 3.20 | Goal: +1.90
-- Thompson, Mark Allen ($/WO): Current $15.26 | Goal: +$14.31
-- Tolan, Kevin S (DCR): Current 76.19% | Goal: +15.29%
-- Tolan, Kevin S (R12%): Current 18.75% | Goal: -14.09%
-
-Let's focus our routing and ride-alongs on closing these exact gaps. Let me know how I can support you this week!
-
-Best,
-MTD Focus
-                </div>
-            </div>
-
-            <div id="playbook-content" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="card p-6">
-                    <h3 class="font-bold text-amber-500 mb-2">⚡ Productivity & Value Metrics Strategy</h3>
-                    <p class="text-sm text-dim leading-relaxed">Observe real-time job timeline tracking. Eliminate transitional friction point delays and ensure site optimization scripts are reviewed carefully during diagnostic sequences.</p>
-                </div>
-                <div class="card p-6">
-                    <h3 class="font-bold text-red-500 mb-2">✓ Quality Control & Completion Measures</h3>
-                    <p class="text-sm text-dim leading-relaxed">Audit installation setup and verify strict schematic alignment workflows are completed prior to filing standard closure actions on-site.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="mt-12 border-t border-neutral-900 pt-8 pb-4 text-center text-xs text-dim">
-            FSM Leadership Dashboard V2.0 | Weekly Focus Automated Output
-        </div>
-    </div>
-
-    <script>
-        // Gmail Web Compose Execution Protocol
-        function sendEmail() {
-            const email = "ihsmgmtconcord@dish.com";
-            const subject = encodeURIComponent("Concord FSM Weekly Field Focus - Target Areas");
-            
-            // Note: HTML tags are not supported via URL parameters, but Gmail will 
-            // automatically hyperlink any valid web address starting with https://
-            const bodyText = document.getElementById('email-body-text').innerText;
-            
-            const body = encodeURIComponent(bodyText);
-            
-            // Force opens Gmail in a new browser tab instead of relying on OS defaults
-            const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
-            window.open(gmailLink, '_blank');
-        }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const tabs = document.querySelectorAll('nav button');
-            const contents = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    const targetContentId = tab.id.replace('tab-', '') + '-content';
-                    tabs.forEach(t => {
-                        t.classList.remove('active-tab-style', 'text-black');
-                        t.classList.add('text-neutral-300');
-                        const iconSpan = t.querySelector('.tab-icon');
-                        if (iconSpan) {
-                            const iconSvg = iconSpan.querySelector('svg');
-                            if (iconSvg) { iconSvg.style.fill = ''; iconSvg.style.stroke = ''; }
-                        }
-                    });
-                    contents.forEach(content => {
-                        content.classList.add('hidden');
-                        content.classList.remove('block');
-                    });
-                    tab.classList.add('active-tab-style', 'text-black');
-                    tab.classList.remove('text-neutral-300');
-                    const iconSpan = tab.querySelector('.tab-icon');
-                    if (iconSpan) {
-                        const iconSvg = iconSpan.querySelector('svg');
-                        if (iconSvg) { iconSvg.style.fill = 'black'; iconSvg.style.stroke = 'black'; }
-                    }
-                    const targetContent = document.getElementById(targetContentId);
-                    targetContent.classList.remove('hidden');
-                    targetContent.classList.add('block');
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+                            
+                            <div class="p-5 w-full lg:w-1/2 bg-[#0f0f0f]">
+                                <h4 class="text-[10px] text-red-500 uppercase tracking-widest mb-3 font-bold">Primary Targets & Goals</h4>
+                                <div class="space-y-2 text-xs">
+                                    <div class="flex justify-between items-center bg-[#1a0505] p-2 rounded border border-[#330000]">
+                                        <div class="truncate pr-2"><span class="text-dim text-[10px] uppercase tracking-wider mr-1">PPH:</span> <span class="text-gray-300 font-medium">Dorward, Bryan</span></div>
+                                        <div class="text-red-400 font-mono text-[11px] whitespace-nowrap">Goal: +1.48</div>
+                                    </div>
+                                    <div class="flex justify-between items-center bg-[#1a0505] p-2 rounded border border-[#330000]">
+                                        <div class="truncate pr-2"><span class="text-dim text-[10px] uppercase tracking-wider mr-1">$/WO:</span> <span class="text-gray-300 font-medium">Martineau, Justin</span></div>
+                                        <div class="text-red-400 font-mono text-[11px] whitespace-nowrap">Goal: +$29.57</div>
+                                    </div>
+                                    <div class="flex justify-between items-center bg-[#1a0505] p-2 rounded border border-[#330000]">
+                                        <div class="truncate pr-2"><span class="text-dim text-[10px] uppercase tracking-wider mr-1">DCR:</span> <span class="text-gray-300 font-medium">Patten, Bradley</span></div>
+                                        <div class="text-red-400 font-mono text-[11px] whitespace-nowrap">Goal: +7.11%</div>
+                                    </div>
+                                    <div class="flex justify-between items-center bg-[#1a0505] p-2 rounded border border-[#330000]">
+                                        <div class="truncate pr-2"><span class="text-dim text-[10px] uppercase tracking-wider mr-1">R12%:</span> <span class="text-gray-300 font-medium">Gonzalez, Jeremy</span></div>
+                                        <div class="text-red-400 font-mono text-[11px] whitespace-nowrap">Goal: -7
