@@ -1,0 +1,33 @@
+{
+  "timeline": [
+    {
+      "week_id": "2026-W36",
+      "date": "2026-09-08",
+      "office": {
+        "rank": 27,
+        "PPH": 5.62,
+        "revenue": 25.16,
+        "DCR": 0.9271,
+        "R12": 0.042553,
+        "NPS": 95.45
+      },
+      "techs": [
+        {"Tech": "Babcock, James V", "FSM": "Coates, Tom", "Level": "DT4", "PPH": 6.19, "$/WO": 50.9, "DCR": 0.9333, "R12%": 0.0, "NPS": 100.0, "Score": 75.0, "Incentive": 225.0, "Passing_Metrics": 4},
+        {"Tech": "Bianco, Robert M", "FSM": "Tuman, Scott", "Level": "DT4", "PPH": 8.08, "$/WO": 2.5, "DCR": 0.9047, "R12%": 0.052632, "NPS": 75.0, "Score": 65.0, "Incentive": 175.0, "Passing_Metrics": 0},
+        {"Tech": "Bosch, Micah", "FSM": "Tuman, Scott", "Level": "DT1", "PPH": 4.26, "$/WO": 10.0, "DCR": 1.0, "R12%": 0.0, "NPS": 100.0, "Score": 60.0, "Incentive": 150.0, "Passing_Metrics": 0},
+        {"Tech": "deLancey, Isiah D", "FSM": "Coates, Tom", "Level": "DT3", "PPH": 5.69, "$/WO": 5.77, "DCR": 0.9375, "R12%": 0.0, "NPS": 100.0, "Score": 75.0, "Incentive": 225.0, "Passing_Metrics": 2},
+        {"Tech": "Dorward, Bryan", "FSM": "Tuman, Scott", "Level": "DT", "PPH": 4.95, "$/WO": 57.85, "DCR": 1.0, "R12%": 0.090909, "NPS": 100.0, "Score": 65.0, "Incentive": 175.0, "Passing_Metrics": 0},
+        {"Tech": "Gonzalez, Jeremy", "FSM": "Tuman, Scott", "Level": "DT1", "PPH": 5.53, "$/WO": 5.0, "DCR": 1.0, "R12%": 0.272727, "NPS": 100.0, "Score": 0.0, "Incentive": 0.0, "Passing_Metrics": 0},
+        {"Tech": "Mallette, Nicole", "FSM": "Tuman, Scott", "Level": "DT1", "PPH": 4.17, "$/WO": 85.0, "DCR": 0.875, "R12%": 0.0, "NPS": null, "Score": 0.0, "Incentive": 0.0, "Passing_Metrics": 0},
+        {"Tech": "Martineau, Justin", "FSM": "Tuman, Scott", "Level": "DT", "PPH": 5.7, "$/WO": 62.5, "DCR": 1.0, "R12%": 0.0, "NPS": 100.0, "Score": 0.0, "Incentive": 0.0, "Passing_Metrics": 0},
+        {"Tech": "Parton, Cory", "FSM": "Coates, Tom", "Level": "DT3", "PPH": 6.74, "$/WO": 44.0, "DCR": 0.9411, "R12%": 0.0625, "NPS": 100.0, "Score": 0.0, "Incentive": 0.0, "Passing_Metrics": 1},
+        {"Tech": "Patten, Bradley", "FSM": "Tuman, Scott", "Level": "DT1", "PPH": 6.7, "$/WO": 25.83, "DCR": 1.0, "R12%": 0.0, "NPS": 100.0, "Score": 0.0, "Incentive": 0.0, "Passing_Metrics": 0},
+        {"Tech": "Smith, Kaden M", "FSM": "Tuman, Scott", "Level": "DT4", "PPH": 5.81, "$/WO": 0.0, "DCR": 0.8333, "R12%": 0.0, "NPS": 100.0, "Score": 0.0, "Incentive": 0.0, "Passing_Metrics": 0},
+        {"Tech": "Thompson, Mark Allen", "FSM": "Coates, Tom", "Level": "DT1", "PPH": 4.81, "$/WO": 16.24, "DCR": 0.9166, "R12%": 0.0, "NPS": 100.0, "Score": 0.0, "Incentive": 0.0, "Passing_Metrics": 0},
+        {"Tech": "Tolan, Kevin S", "FSM": "Coates, Tom", "Level": "DT1", "PPH": 5.18, "$/WO": 22.5, "DCR": 1.0, "R12%": 0.090909, "NPS": null, "Score": 0.0, "Incentive": 0.0, "Passing_Metrics": 0},
+        {"Tech": "Vodvarka, Ryan", "FSM": "Tuman, Scott", "Level": "DT2", "PPH": 5.28, "$/WO": 30.0, "DCR": 0.8235, "R12%": 0.090909, "NPS": null, "Score": 0.0, "Incentive": 0.0, "Passing_Metrics": 0},
+        {"Tech": "Yeaw, Cody R", "FSM": "Coates, Tom", "Level": "DT1", "PPH": 5.15, "$/WO": 0.0, "DCR": 0.9, "R12%": 0.0, "NPS": 100.0, "Score": 0.0, "Incentive": 0.0, "Passing_Metrics": 0}
+      ]
+    }
+  ]
+}
